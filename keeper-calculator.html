@@ -1,18 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title></title>
-        <meta charset="UTF-8">
-        <link href="./site.css" rel="stylesheet">
-    </head>
-    <body>
-        <div class="container">
-            <h3>Keeper Calculator</h3>
-            <div>
-                Thanks Sam Barcelona for inspiring this incredible calculator.  I'm sure it'll help all 2 of you who never remember 
-                how to calculate what round you lose for keepers
-            </div>
-            <img src="./assets/keeper-calculator-screenshot.png" alt="My Inspiration" class="screenshot">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <link href="./site.css" rel="stylesheet">
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js"></script>-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.js">
+        
+    </script>
+    <script src="./calculator.js">
+        
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <h3>Keeper Calculator</h3>
+        <div>
+            Thanks Sam Barcelona for inspiring this incredible calculator. I'm sure it'll help all 2 of you who never remember how to
+            calculate what round you lose for keepers
         </div>
-    </body>
+        <img src="./assets/keeper-calculator-screenshot.png" alt="My Inspiration" class="screenshot">
+        <div class="calculator-section" ng-app="app">
+
+            <div>
+                Enter the round or the draft pick of the player you'd like to keep. Draft Pick is 
+                determined by:
+            </div>
+
+            <ul>
+                <li>
+                    Where they were drafted last year, regardless of if you got them off of the waiver 
+                    wire or not.
+                </li>
+                <li>
+                    If the player was your keeper from last year, their draft pick is based on their ADP from last year. 
+                    2015 ADP will be based off of <a target="_blank" href="http://www.espn.com/fantasy/football/story/_/page/ClayPPRranks150615/mike-clay-2015-fantasy-football-ppr-rankings">these rankings</a>
+                </li>
+            </ul>
+
+
+            <div class="calculator" ng-controller="calcCtrl as vm">
+                <div class="form">
+                    <div class="row">
+                        <label for="round">Round:</label>
+                        <input type="text" name="round" ng-model="vm.round" ng-change="vm.changeRound()" />
+                    </div>
+                    <div class="row">
+                        <label for="pick">
+                            Pick:
+                        </label>
+                        <input type="text" name="pick" ng-model="vm.pick" ng-change="vm.changePick()"/>
+                    </div>
+             
+
+                    <div class="results">
+                        {{vm.result}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
 </html>
