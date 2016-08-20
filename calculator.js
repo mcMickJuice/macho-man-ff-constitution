@@ -13,6 +13,7 @@ function controller(calcService) {
 
     function validate(num) {
         vm.result = "";
+        vm.isError = false;
 
         if(num == null || num === "") {
             return true;
@@ -20,6 +21,7 @@ function controller(calcService) {
 
         if(isNaN(num)) {
             vm.result = "Please put in a number. " + num + " is not a number";
+            vm.isError = true;
             return true;
         }
 
@@ -35,8 +37,9 @@ function controller(calcService) {
 
         if (result.error) {
             vm.result = result.error.message;
+            vm.isError = true;
         } else {
-            vm.result = result.round;
+            vm.result = "Round Lost: " + result.round;
         }
     }
 
@@ -49,8 +52,9 @@ function controller(calcService) {
 
         if (result.error) {
             vm.result = result.error.message;
+            vm.isError = true;
         } else {
-            vm.result = result.round;
+            vm.result = "Round Lost: " + result.round;
         }
     }
 }

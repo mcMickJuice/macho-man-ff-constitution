@@ -10,3 +10,16 @@
     padding: 10px;
     border-radius: 10px;
 }
+
+.results {
+    font-size: 2em;
+}
+
+.error {
+    color: red;
+}
+
+.ok {
+    font-size: 3em;
+    color: green;
+}

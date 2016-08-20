@@ -55,7 +55,7 @@
                     </div>
              
 
-                    <div class="results">
+                    <div class="results" ng-class="{error: vm.isError, ok: !vm.isError}">
                         {{vm.result}}
                     </div>
                 </div>
