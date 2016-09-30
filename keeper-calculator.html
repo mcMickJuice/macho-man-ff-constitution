@@ -5,11 +5,6 @@
     <title></title>
     <meta charset="UTF-8">
     <link href="./site.css" rel="stylesheet">
-    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js"></script>-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.js">
-        
-    </script>
-    <script src="./calculator.js">
         
     </script>
 </head>
@@ -40,32 +35,10 @@
                 </li>
             </ul>
 
-
-            <div class="calculator" ng-controller="calcCtrl as vm">
-                <div class="form">
-                    <div class="row">
-                        <label for="round">Round:</label>
-                        <input type="text" name="round" ng-model="vm.round" ng-change="vm.changeRound()" />
-                    </div>
-                    <div class="row">
-                        <label for="pick">
-                            Pick:
-                        </label>
-                        <input type="text" name="pick" ng-model="vm.pick" ng-change="vm.changePick()"/>
-                    </div>
-             
-
-                    <div class="results" ng-class="{error: vm.isError, ok: !vm.isError}">
-                        {{vm.result}}
-                    </div>
-                    <div ng-show="vm.troll">
-                        <img src="./assets/troll.gif" alt="You're a troll">
-                    </div>
-                </div>
-            </div>
+            <div id="mount"></div>
         </div>
     </div>
-
+<script src="calculator.js"></script>
 </body>
 
 </html>
