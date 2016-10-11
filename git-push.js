@@ -1,14 +1,12 @@
 var ghpages = require('gh-pages')
 var path = require('path')
 
-var repo = 'test-repo'
+var repo = 'test-branch'
+
 
 ghpages.publish(path.join(__dirname, 'dist'), {
     branch: repo,
-    user: {
-        name: 'Mike Joyce',
-        email: 'mikejoyce19@gmail.com'
-    }
+    message: `deploying to branch: ${repo}` 
 }, function (err) {
     if (err) {
         console.error('An error has occurred', err)
@@ -17,3 +15,4 @@ ghpages.publish(path.join(__dirname, 'dist'), {
 
     console.log(`Stuff pushed to ${repo}`)
 })
+
