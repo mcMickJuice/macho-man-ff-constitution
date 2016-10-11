@@ -1,115 +1,24 @@
-angular.module("app", [])
-    .controller("calcCtrl", controller)
-    .service("calcService", service)
+webpackJsonp([0],{
 
-controller.$inject = ["calcService"]
-function controller(calcService) {
-    var vm = this;
-    var numberTeamsPerLeague = 12;
+/***/ 0:
+/***/ function(module, exports, __webpack_require__) {
 
+	eval("'use strict';\n\nvar _react = __webpack_require__(1);\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _reactDom = __webpack_require__(34);\n\nvar _Calculator = __webpack_require__(172);\n\nvar _Calculator2 = _interopRequireDefault(_Calculator);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar mount = document.getElementById('mount');\n\n(0, _reactDom.render)(_react2.default.createElement(_Calculator2.default, null), mount);//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiMC5qcyIsInNvdXJjZXMiOlsid2VicGFjazovLy8uL3NyYy9mZWF0dXJlcy9kcmFmdC1waWNrLWNhbGN1bGF0b3IvaW5kZXguanN4PzJlZDEiXSwic291cmNlc0NvbnRlbnQiOlsiJ3VzZSBzdHJpY3QnO1xuXG52YXIgX3JlYWN0ID0gcmVxdWlyZSgncmVhY3QnKTtcblxudmFyIF9yZWFjdDIgPSBfaW50ZXJvcFJlcXVpcmVEZWZhdWx0KF9yZWFjdCk7XG5cbnZhciBfcmVhY3REb20gPSByZXF1aXJlKCdyZWFjdC1kb20nKTtcblxudmFyIF9DYWxjdWxhdG9yID0gcmVxdWlyZSgnLi9jb21wb25lbnRzL0NhbGN1bGF0b3InKTtcblxudmFyIF9DYWxjdWxhdG9yMiA9IF9pbnRlcm9wUmVxdWlyZURlZmF1bHQoX0NhbGN1bGF0b3IpO1xuXG5mdW5jdGlvbiBfaW50ZXJvcFJlcXVpcmVEZWZhdWx0KG9iaikgeyByZXR1cm4gb2JqICYmIG9iai5fX2VzTW9kdWxlID8gb2JqIDogeyBkZWZhdWx0OiBvYmogfTsgfVxuXG52YXIgbW91bnQgPSBkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgnbW91bnQnKTtcblxuKDAsIF9yZWFjdERvbS5yZW5kZXIpKF9yZWFjdDIuZGVmYXVsdC5jcmVhdGVFbGVtZW50KF9DYWxjdWxhdG9yMi5kZWZhdWx0LCBudWxsKSwgbW91bnQpO1xuXG5cbi8qKioqKioqKioqKioqKioqKlxuICoqIFdFQlBBQ0sgRk9PVEVSXG4gKiogLi9zcmMvZmVhdHVyZXMvZHJhZnQtcGljay1jYWxjdWxhdG9yL2luZGV4LmpzeFxuICoqIG1vZHVsZSBpZCA9IDBcbiAqKiBtb2R1bGUgY2h1bmtzID0gMFxuICoqLyJdLCJtYXBwaW5ncyI6IkFBQUE7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQSIsInNvdXJjZVJvb3QiOiIifQ==");
 
-    vm.pick = null;
-    vm.round = null;
+/***/ },
 
-    function troll(isTroll) {
-        vm.troll = isTroll;
-    }
+/***/ 172:
+/***/ function(module, exports, __webpack_require__) {
 
-    function validate(num) {
-        troll(false);        
-        vm.result = "";
-        vm.isError = false;
+	eval("'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n    value: true\n});\n\nvar _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };\n\nvar _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();\n\nvar _react = __webpack_require__(1);\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _calculatorService = __webpack_require__(173);\n\nvar calculator = _interopRequireWildcard(_calculatorService);\n\nfunction _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nfunction _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError(\"this hasn't been initialised - super() hasn't been called\"); } return call && (typeof call === \"object\" || typeof call === \"function\") ? call : self; }\n\nfunction _inherits(subClass, superClass) { if (typeof superClass !== \"function\" && superClass !== null) { throw new TypeError(\"Super expression must either be null or a function, not \" + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }\n\nvar Calculator = function (_Component) {\n    _inherits(Calculator, _Component);\n\n    function Calculator() {\n        _classCallCheck(this, Calculator);\n\n        var _this = _possibleConstructorReturn(this, (Calculator.__proto__ || Object.getPrototypeOf(Calculator)).call(this));\n\n        _this.changeRound = _this.changeRound.bind(_this);\n        _this.changePick = _this.changePick.bind(_this);\n\n        _this.state = {\n            round: null,\n            pick: null\n        };\n        return _this;\n    }\n\n    _createClass(Calculator, [{\n        key: 'changeRound',\n        value: function changeRound(evt) {\n            var round = evt.target.value;\n            var newState = { pick: null, error: null, roundLost: null };\n            if (round == 0) {\n                newState.round = null;\n            } else {\n                round = Number(round);\n\n                var _calculator$getKeeper = calculator.getKeeperRoundByRound(round);\n\n                var error = _calculator$getKeeper.error;\n                var roundLost = _calculator$getKeeper.roundLost;\n\n                newState = _extends({}, newState, { round: round, error: error, roundLost: roundLost });\n            }\n\n            this.setState(newState);\n        }\n    }, {\n        key: 'changePick',\n        value: function changePick(evt) {\n            var pick = evt.target.value;\n            var newState = { round: null, error: null, roundLost: null };\n            if (pick == 0) {\n                newState.pick = null;\n            } else {\n                pick = Number(pick);\n\n                var _calculator$getKeeper2 = calculator.getKeeperRoundByPick(pick);\n\n                var error = _calculator$getKeeper2.error;\n                var roundLost = _calculator$getKeeper2.roundLost;\n\n                newState = _extends({}, newState, { pick: pick, error: error, roundLost: roundLost });\n            }\n\n            this.setState(newState);\n        }\n    }, {\n        key: 'render',\n        value: function render() {\n            var _state = this.state;\n            var pick = _state.pick;\n            var round = _state.round;\n            var roundLost = _state.roundLost;\n            var error = _state.error;\n\n\n            var result = error != null ? _react2.default.createElement(\n                'div',\n                { className: 'error' },\n                error.message\n            ) : _react2.default.createElement(\n                'div',\n                { className: 'results' },\n                roundLost\n            );\n\n            return _react2.default.createElement(\n                'div',\n                { className: 'calculator' },\n                _react2.default.createElement(\n                    'div',\n                    { className: 'form' },\n                    _react2.default.createElement(\n                        'div',\n                        { className: 'row' },\n                        _react2.default.createElement(\n                            'label',\n                            { htmlFor: 'round' },\n                            'Round: '\n                        ),\n                        _react2.default.createElement('input', { type: 'number', value: round || 0, onInput: this.changeRound })\n                    ),\n                    _react2.default.createElement(\n                        'div',\n                        { className: 'row' },\n                        _react2.default.createElement(\n                            'label',\n                            { htmlFor: 'pick' },\n                            'Pick:'\n                        ),\n                        _react2.default.createElement('input', { type: 'number', value: pick || 0, onInput: this.changePick })\n                    )\n                ),\n                result\n            );\n        }\n    }]);\n\n    return Calculator;\n}(_react.Component);\n\nexports.default = Calculator;//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiMTcyLmpzIiwic291cmNlcyI6WyJ3ZWJwYWNrOi8vLy4vc3JjL2ZlYXR1cmVzL2RyYWZ0LXBpY2stY2FsY3VsYXRvci9jb21wb25lbnRzL0NhbGN1bGF0b3IuanN4PzI1ODkiXSwic291cmNlc0NvbnRlbnQiOlsiJ3VzZSBzdHJpY3QnO1xuXG5PYmplY3QuZGVmaW5lUHJvcGVydHkoZXhwb3J0cywgXCJfX2VzTW9kdWxlXCIsIHtcbiAgICB2YWx1ZTogdHJ1ZVxufSk7XG5cbnZhciBfZXh0ZW5kcyA9IE9iamVjdC5hc3NpZ24gfHwgZnVuY3Rpb24gKHRhcmdldCkgeyBmb3IgKHZhciBpID0gMTsgaSA8IGFyZ3VtZW50cy5sZW5ndGg7IGkrKykgeyB2YXIgc291cmNlID0gYXJndW1lbnRzW2ldOyBmb3IgKHZhciBrZXkgaW4gc291cmNlKSB7IGlmIChPYmplY3QucHJvdG90eXBlLmhhc093blByb3BlcnR5LmNhbGwoc291cmNlLCBrZXkpKSB7IHRhcmdldFtrZXldID0gc291cmNlW2tleV07IH0gfSB9IHJldHVybiB0YXJnZXQ7IH07XG5cbnZhciBfY3JlYXRlQ2xhc3MgPSBmdW5jdGlvbiAoKSB7IGZ1bmN0aW9uIGRlZmluZVByb3BlcnRpZXModGFyZ2V0LCBwcm9wcykgeyBmb3IgKHZhciBpID0gMDsgaSA8IHByb3BzLmxlbmd0aDsgaSsrKSB7IHZhciBkZXNjcmlwdG9yID0gcHJvcHNbaV07IGRlc2NyaXB0b3IuZW51bWVyYWJsZSA9IGRlc2NyaXB0b3IuZW51bWVyYWJsZSB8fCBmYWxzZTsgZGVzY3JpcHRvci5jb25maWd1cmFibGUgPSB0cnVlOyBpZiAoXCJ2YWx1ZVwiIGluIGRlc2NyaXB0b3IpIGRlc2NyaXB0b3Iud3JpdGFibGUgPSB0cnVlOyBPYmplY3QuZGVmaW5lUHJvcGVydHkodGFyZ2V0LCBkZXNjcmlwdG9yLmtleSwgZGVzY3JpcHRvcik7IH0gfSByZXR1cm4gZnVuY3Rpb24gKENvbnN0cnVjdG9yLCBwcm90b1Byb3BzLCBzdGF0aWNQcm9wcykgeyBpZiAocHJvdG9Qcm9wcykgZGVmaW5lUHJvcGVydGllcyhDb25zdHJ1Y3Rvci5wcm90b3R5cGUsIHByb3RvUHJvcHMpOyBpZiAoc3RhdGljUHJvcHMpIGRlZmluZVByb3BlcnRpZXMoQ29uc3RydWN0b3IsIHN0YXRpY1Byb3BzKTsgcmV0dXJuIENvbnN0cnVjdG9yOyB9OyB9KCk7XG5cbnZhciBfcmVhY3QgPSByZXF1aXJlKCdyZWFjdCcpO1xuXG52YXIgX3JlYWN0MiA9IF9pbnRlcm9wUmVxdWlyZURlZmF1bHQoX3JlYWN0KTtcblxudmFyIF9jYWxjdWxhdG9yU2VydmljZSA9IHJlcXVpcmUoJy4uL2NhbGN1bGF0b3JTZXJ2aWNlJyk7XG5cbnZhciBjYWxjdWxhdG9yID0gX2ludGVyb3BSZXF1aXJlV2lsZGNhcmQoX2NhbGN1bGF0b3JTZXJ2aWNlKTtcblxuZnVuY3Rpb24gX2ludGVyb3BSZXF1aXJlV2lsZGNhcmQob2JqKSB7IGlmIChvYmogJiYgb2JqLl9fZXNNb2R1bGUpIHsgcmV0dXJuIG9iajsgfSBlbHNlIHsgdmFyIG5ld09iaiA9IHt9OyBpZiAob2JqICE9IG51bGwpIHsgZm9yICh2YXIga2V5IGluIG9iaikgeyBpZiAoT2JqZWN0LnByb3RvdHlwZS5oYXNPd25Qcm9wZXJ0eS5jYWxsKG9iaiwga2V5KSkgbmV3T2JqW2tleV0gPSBvYmpba2V5XTsgfSB9IG5ld09iai5kZWZhdWx0ID0gb2JqOyByZXR1cm4gbmV3T2JqOyB9IH1cblxuZnVuY3Rpb24gX2ludGVyb3BSZXF1aXJlRGVmYXVsdChvYmopIHsgcmV0dXJuIG9iaiAmJiBvYmouX19lc01vZHVsZSA/IG9iaiA6IHsgZGVmYXVsdDogb2JqIH07IH1cblxuZnVuY3Rpb24gX2NsYXNzQ2FsbENoZWNrKGluc3RhbmNlLCBDb25zdHJ1Y3RvcikgeyBpZiAoIShpbnN0YW5jZSBpbnN0YW5jZW9mIENvbnN0cnVjdG9yKSkgeyB0aHJvdyBuZXcgVHlwZUVycm9yKFwiQ2Fubm90IGNhbGwgYSBjbGFzcyBhcyBhIGZ1bmN0aW9uXCIpOyB9IH1cblxuZnVuY3Rpb24gX3Bvc3NpYmxlQ29uc3RydWN0b3JSZXR1cm4oc2VsZiwgY2FsbCkgeyBpZiAoIXNlbGYpIHsgdGhyb3cgbmV3IFJlZmVyZW5jZUVycm9yKFwidGhpcyBoYXNuJ3QgYmVlbiBpbml0aWFsaXNlZCAtIHN1cGVyKCkgaGFzbid0IGJlZW4gY2FsbGVkXCIpOyB9IHJldHVybiBjYWxsICYmICh0eXBlb2YgY2FsbCA9PT0gXCJvYmplY3RcIiB8fCB0eXBlb2YgY2FsbCA9PT0gXCJmdW5jdGlvblwiKSA/IGNhbGwgOiBzZWxmOyB9XG5cbmZ1bmN0aW9uIF9pbmhlcml0cyhzdWJDbGFzcywgc3VwZXJDbGFzcykgeyBpZiAodHlwZW9mIHN1cGVyQ2xhc3MgIT09IFwiZnVuY3Rpb25cIiAmJiBzdXBlckNsYXNzICE9PSBudWxsKSB7IHRocm93IG5ldyBUeXBlRXJyb3IoXCJTdXBlciBleHByZXNzaW9uIG11c3QgZWl0aGVyIGJlIG51bGwgb3IgYSBmdW5jdGlvbiwgbm90IFwiICsgdHlwZW9mIHN1cGVyQ2xhc3MpOyB9IHN1YkNsYXNzLnByb3RvdHlwZSA9IE9iamVjdC5jcmVhdGUoc3VwZXJDbGFzcyAmJiBzdXBlckNsYXNzLnByb3RvdHlwZSwgeyBjb25zdHJ1Y3RvcjogeyB2YWx1ZTogc3ViQ2xhc3MsIGVudW1lcmFibGU6IGZhbHNlLCB3cml0YWJsZTogdHJ1ZSwgY29uZmlndXJhYmxlOiB0cnVlIH0gfSk7IGlmIChzdXBlckNsYXNzKSBPYmplY3Quc2V0UHJvdG90eXBlT2YgPyBPYmplY3Quc2V0UHJvdG90eXBlT2Yoc3ViQ2xhc3MsIHN1cGVyQ2xhc3MpIDogc3ViQ2xhc3MuX19wcm90b19fID0gc3VwZXJDbGFzczsgfVxuXG52YXIgQ2FsY3VsYXRvciA9IGZ1bmN0aW9uIChfQ29tcG9uZW50KSB7XG4gICAgX2luaGVyaXRzKENhbGN1bGF0b3IsIF9Db21wb25lbnQpO1xuXG4gICAgZnVuY3Rpb24gQ2FsY3VsYXRvcigpIHtcbiAgICAgICAgX2NsYXNzQ2FsbENoZWNrKHRoaXMsIENhbGN1bGF0b3IpO1xuXG4gICAgICAgIHZhciBfdGhpcyA9IF9wb3NzaWJsZUNvbnN0cnVjdG9yUmV0dXJuKHRoaXMsIChDYWxjdWxhdG9yLl9fcHJvdG9fXyB8fCBPYmplY3QuZ2V0UHJvdG90eXBlT2YoQ2FsY3VsYXRvcikpLmNhbGwodGhpcykpO1xuXG4gICAgICAgIF90aGlzLmNoYW5nZVJvdW5kID0gX3RoaXMuY2hhbmdlUm91bmQuYmluZChfdGhpcyk7XG4gICAgICAgIF90aGlzLmNoYW5nZVBpY2sgPSBfdGhpcy5jaGFuZ2VQaWNrLmJpbmQoX3RoaXMpO1xuXG4gICAgICAgIF90aGlzLnN0YXRlID0ge1xuICAgICAgICAgICAgcm91bmQ6IG51bGwsXG4gICAgICAgICAgICBwaWNrOiBudWxsXG4gICAgICAgIH07XG4gICAgICAgIHJldHVybiBfdGhpcztcbiAgICB9XG5cbiAgICBfY3JlYXRlQ2xhc3MoQ2FsY3VsYXRvciwgW3tcbiAgICAgICAga2V5OiAnY2hhbmdlUm91bmQnLFxuICAgICAgICB2YWx1ZTogZnVuY3Rpb24gY2hhbmdlUm91bmQoZXZ0KSB7XG4gICAgICAgICAgICB2YXIgcm91bmQgPSBldnQudGFyZ2V0LnZhbHVlO1xuICAgICAgICAgICAgdmFyIG5ld1N0YXRlID0geyBwaWNrOiBudWxsLCBlcnJvcjogbnVsbCwgcm91bmRMb3N0OiBudWxsIH07XG4gICAgICAgICAgICBpZiAocm91bmQgPT0gMCkge1xuICAgICAgICAgICAgICAgIG5ld1N0YXRlLnJvdW5kID0gbnVsbDtcbiAgICAgICAgICAgIH0gZWxzZSB7XG4gICAgICAgICAgICAgICAgcm91bmQgPSBOdW1iZXIocm91bmQpO1xuXG4gICAgICAgICAgICAgICAgdmFyIF9jYWxjdWxhdG9yJGdldEtlZXBlciA9IGNhbGN1bGF0b3IuZ2V0S2VlcGVyUm91bmRCeVJvdW5kKHJvdW5kKTtcblxuICAgICAgICAgICAgICAgIHZhciBlcnJvciA9IF9jYWxjdWxhdG9yJGdldEtlZXBlci5lcnJvcjtcbiAgICAgICAgICAgICAgICB2YXIgcm91bmRMb3N0ID0gX2NhbGN1bGF0b3IkZ2V0S2VlcGVyLnJvdW5kTG9zdDtcblxuICAgICAgICAgICAgICAgIG5ld1N0YXRlID0gX2V4dGVuZHMoe30sIG5ld1N0YXRlLCB7IHJvdW5kOiByb3VuZCwgZXJyb3I6IGVycm9yLCByb3VuZExvc3Q6IHJvdW5kTG9zdCB9KTtcbiAgICAgICAgICAgIH1cblxuICAgICAgICAgICAgdGhpcy5zZXRTdGF0ZShuZXdTdGF0ZSk7XG4gICAgICAgIH1cbiAgICB9LCB7XG4gICAgICAgIGtleTogJ2NoYW5nZVBpY2snLFxuICAgICAgICB2YWx1ZTogZnVuY3Rpb24gY2hhbmdlUGljayhldnQpIHtcbiAgICAgICAgICAgIHZhciBwaWNrID0gZXZ0LnRhcmdldC52YWx1ZTtcbiAgICAgICAgICAgIHZhciBuZXdTdGF0ZSA9IHsgcm91bmQ6IG51bGwsIGVycm9yOiBudWxsLCByb3VuZExvc3Q6IG51bGwgfTtcbiAgICAgICAgICAgIGlmIChwaWNrID09IDApIHtcbiAgICAgICAgICAgICAgICBuZXdTdGF0ZS5waWNrID0gbnVsbDtcbiAgICAgICAgICAgIH0gZWxzZSB7XG4gICAgICAgICAgICAgICAgcGljayA9IE51bWJlcihwaWNrKTtcblxuICAgICAgICAgICAgICAgIHZhciBfY2FsY3VsYXRvciRnZXRLZWVwZXIyID0gY2FsY3VsYXRvci5nZXRLZWVwZXJSb3VuZEJ5UGljayhwaWNrKTtcblxuICAgICAgICAgICAgICAgIHZhciBlcnJvciA9IF9jYWxjdWxhdG9yJGdldEtlZXBlcjIuZXJyb3I7XG4gICAgICAgICAgICAgICAgdmFyIHJvdW5kTG9zdCA9IF9jYWxjdWxhdG9yJGdldEtlZXBlcjIucm91bmRMb3N0O1xuXG4gICAgICAgICAgICAgICAgbmV3U3RhdGUgPSBfZXh0ZW5kcyh7fSwgbmV3U3RhdGUsIHsgcGljazogcGljaywgZXJyb3I6IGVycm9yLCByb3VuZExvc3Q6IHJvdW5kTG9zdCB9KTtcbiAgICAgICAgICAgIH1cblxuICAgICAgICAgICAgdGhpcy5zZXRTdGF0ZShuZXdTdGF0ZSk7XG4gICAgICAgIH1cbiAgICB9LCB7XG4gICAgICAgIGtleTogJ3JlbmRlcicsXG4gICAgICAgIHZhbHVlOiBmdW5jdGlvbiByZW5kZXIoKSB7XG4gICAgICAgICAgICB2YXIgX3N0YXRlID0gdGhpcy5zdGF0ZTtcbiAgICAgICAgICAgIHZhciBwaWNrID0gX3N0YXRlLnBpY2s7XG4gICAgICAgICAgICB2YXIgcm91bmQgPSBfc3RhdGUucm91bmQ7XG4gICAgICAgICAgICB2YXIgcm91bmRMb3N0ID0gX3N0YXRlLnJvdW5kTG9zdDtcbiAgICAgICAgICAgIHZhciBlcnJvciA9IF9zdGF0ZS5lcnJvcjtcblxuXG4gICAgICAgICAgICB2YXIgcmVzdWx0ID0gZXJyb3IgIT0gbnVsbCA/IF9yZWFjdDIuZGVmYXVsdC5jcmVhdGVFbGVtZW50KFxuICAgICAgICAgICAgICAgICdkaXYnLFxuICAgICAgICAgICAgICAgIHsgY2xhc3NOYW1lOiAnZXJyb3InIH0sXG4gICAgICAgICAgICAgICAgZXJyb3IubWVzc2FnZVxuICAgICAgICAgICAgKSA6IF9yZWFjdDIuZGVmYXVsdC5jcmVhdGVFbGVtZW50KFxuICAgICAgICAgICAgICAgICdkaXYnLFxuICAgICAgICAgICAgICAgIHsgY2xhc3NOYW1lOiAncmVzdWx0cycgfSxcbiAgICAgICAgICAgICAgICByb3VuZExvc3RcbiAgICAgICAgICAgICk7XG5cbiAgICAgICAgICAgIHJldHVybiBfcmVhY3QyLmRlZmF1bHQuY3JlYXRlRWxlbWVudChcbiAgICAgICAgICAgICAgICAnZGl2JyxcbiAgICAgICAgICAgICAgICB7IGNsYXNzTmFtZTogJ2NhbGN1bGF0b3InIH0sXG4gICAgICAgICAgICAgICAgX3JlYWN0Mi5kZWZhdWx0LmNyZWF0ZUVsZW1lbnQoXG4gICAgICAgICAgICAgICAgICAgICdkaXYnLFxuICAgICAgICAgICAgICAgICAgICB7IGNsYXNzTmFtZTogJ2Zvcm0nIH0sXG4gICAgICAgICAgICAgICAgICAgIF9yZWFjdDIuZGVmYXVsdC5jcmVhdGVFbGVtZW50KFxuICAgICAgICAgICAgICAgICAgICAgICAgJ2RpdicsXG4gICAgICAgICAgICAgICAgICAgICAgICB7IGNsYXNzTmFtZTogJ3JvdycgfSxcbiAgICAgICAgICAgICAgICAgICAgICAgIF9yZWFjdDIuZGVmYXVsdC5jcmVhdGVFbGVtZW50KFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICdsYWJlbCcsXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgeyBodG1sRm9yOiAncm91bmQnIH0sXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgJ1JvdW5kOiAnXG4gICAgICAgICAgICAgICAgICAgICAgICApLFxuICAgICAgICAgICAgICAgICAgICAgICAgX3JlYWN0Mi5kZWZhdWx0LmNyZWF0ZUVsZW1lbnQoJ2lucHV0JywgeyB0eXBlOiAnbnVtYmVyJywgdmFsdWU6IHJvdW5kIHx8IDAsIG9uSW5wdXQ6IHRoaXMuY2hhbmdlUm91bmQgfSlcbiAgICAgICAgICAgICAgICAgICAgKSxcbiAgICAgICAgICAgICAgICAgICAgX3JlYWN0Mi5kZWZhdWx0LmNyZWF0ZUVsZW1lbnQoXG4gICAgICAgICAgICAgICAgICAgICAgICAnZGl2JyxcbiAgICAgICAgICAgICAgICAgICAgICAgIHsgY2xhc3NOYW1lOiAncm93JyB9LFxuICAgICAgICAgICAgICAgICAgICAgICAgX3JlYWN0Mi5kZWZhdWx0LmNyZWF0ZUVsZW1lbnQoXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgJ2xhYmVsJyxcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICB7IGh0bWxGb3I6ICdwaWNrJyB9LFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICdQaWNrOidcbiAgICAgICAgICAgICAgICAgICAgICAgICksXG4gICAgICAgICAgICAgICAgICAgICAgICBfcmVhY3QyLmRlZmF1bHQuY3JlYXRlRWxlbWVudCgnaW5wdXQnLCB7IHR5cGU6ICdudW1iZXInLCB2YWx1ZTogcGljayB8fCAwLCBvbklucHV0OiB0aGlzLmNoYW5nZVBpY2sgfSlcbiAgICAgICAgICAgICAgICAgICAgKVxuICAgICAgICAgICAgICAgICksXG4gICAgICAgICAgICAgICAgcmVzdWx0XG4gICAgICAgICAgICApO1xuICAgICAgICB9XG4gICAgfV0pO1xuXG4gICAgcmV0dXJuIENhbGN1bGF0b3I7XG59KF9yZWFjdC5Db21wb25lbnQpO1xuXG5leHBvcnRzLmRlZmF1bHQgPSBDYWxjdWxhdG9yO1xuXG5cbi8qKioqKioqKioqKioqKioqKlxuICoqIFdFQlBBQ0sgRk9PVEVSXG4gKiogLi9zcmMvZmVhdHVyZXMvZHJhZnQtcGljay1jYWxjdWxhdG9yL2NvbXBvbmVudHMvQ2FsY3VsYXRvci5qc3hcbiAqKiBtb2R1bGUgaWQgPSAxNzJcbiAqKiBtb2R1bGUgY2h1bmtzID0gMFxuICoqLyJdLCJtYXBwaW5ncyI6IkFBQUE7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0EiLCJzb3VyY2VSb290IjoiIn0=");
 
-        if (num == null || num === "") {
-            return true;
-        }
+/***/ },
 
-        if (isNaN(num)) {
-            vm.result = "Please put in a number. " + num + " is not a number";
-            vm.isError = true;
-            return true;
-        }
+/***/ 173:
+/***/ function(module, exports) {
 
-        if (num <= 0) {
-            troll(true);
-            return true;
-        }
+	eval("'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n    value: true\n});\nexports.getKeeperRoundByRound = getKeeperRoundByRound;\nexports.getKeeperRoundByPick = getKeeperRoundByPick;\nvar numberTeamsPerLeague = 12;\n\nfunction getRoundLost(round) {\n    var roundLost = round - 1;\n    var maxRoundLost = 8;\n\n    return roundLost > maxRoundLost ? maxRoundLost : roundLost;\n}\n\nfunction validateRound(round) {\n    if (round < 1) {\n        return {\n            error: {\n                message: 'You can\\'t keep a pick selected in the first round.'\n            }\n        };\n    }\n\n    return {\n        roundLost: round\n    };\n}\n\nfunction getKeeperRoundByRound(round) {\n    var roundLost = getRoundLost(round);\n\n    return validateRound(roundLost);\n}\n\nfunction getKeeperRoundByPick(pick) {\n    var round = Math.ceil(pick / numberTeamsPerLeague);\n\n    var roundLost = getRoundLost(round);\n\n    return validateRound(roundLost);\n}//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiMTczLmpzIiwic291cmNlcyI6WyJ3ZWJwYWNrOi8vLy4vc3JjL2ZlYXR1cmVzL2RyYWZ0LXBpY2stY2FsY3VsYXRvci9jYWxjdWxhdG9yU2VydmljZS5qcz9kMzY5Il0sInNvdXJjZXNDb250ZW50IjpbIid1c2Ugc3RyaWN0JztcblxuT2JqZWN0LmRlZmluZVByb3BlcnR5KGV4cG9ydHMsIFwiX19lc01vZHVsZVwiLCB7XG4gICAgdmFsdWU6IHRydWVcbn0pO1xuZXhwb3J0cy5nZXRLZWVwZXJSb3VuZEJ5Um91bmQgPSBnZXRLZWVwZXJSb3VuZEJ5Um91bmQ7XG5leHBvcnRzLmdldEtlZXBlclJvdW5kQnlQaWNrID0gZ2V0S2VlcGVyUm91bmRCeVBpY2s7XG52YXIgbnVtYmVyVGVhbXNQZXJMZWFndWUgPSAxMjtcblxuZnVuY3Rpb24gZ2V0Um91bmRMb3N0KHJvdW5kKSB7XG4gICAgdmFyIHJvdW5kTG9zdCA9IHJvdW5kIC0gMTtcbiAgICB2YXIgbWF4Um91bmRMb3N0ID0gODtcblxuICAgIHJldHVybiByb3VuZExvc3QgPiBtYXhSb3VuZExvc3QgPyBtYXhSb3VuZExvc3QgOiByb3VuZExvc3Q7XG59XG5cbmZ1bmN0aW9uIHZhbGlkYXRlUm91bmQocm91bmQpIHtcbiAgICBpZiAocm91bmQgPCAxKSB7XG4gICAgICAgIHJldHVybiB7XG4gICAgICAgICAgICBlcnJvcjoge1xuICAgICAgICAgICAgICAgIG1lc3NhZ2U6ICdZb3UgY2FuXFwndCBrZWVwIGEgcGljayBzZWxlY3RlZCBpbiB0aGUgZmlyc3Qgcm91bmQuJ1xuICAgICAgICAgICAgfVxuICAgICAgICB9O1xuICAgIH1cblxuICAgIHJldHVybiB7XG4gICAgICAgIHJvdW5kTG9zdDogcm91bmRcbiAgICB9O1xufVxuXG5mdW5jdGlvbiBnZXRLZWVwZXJSb3VuZEJ5Um91bmQocm91bmQpIHtcbiAgICB2YXIgcm91bmRMb3N0ID0gZ2V0Um91bmRMb3N0KHJvdW5kKTtcblxuICAgIHJldHVybiB2YWxpZGF0ZVJvdW5kKHJvdW5kTG9zdCk7XG59XG5cbmZ1bmN0aW9uIGdldEtlZXBlclJvdW5kQnlQaWNrKHBpY2spIHtcbiAgICB2YXIgcm91bmQgPSBNYXRoLmNlaWwocGljayAvIG51bWJlclRlYW1zUGVyTGVhZ3VlKTtcblxuICAgIHZhciByb3VuZExvc3QgPSBnZXRSb3VuZExvc3Qocm91bmQpO1xuXG4gICAgcmV0dXJuIHZhbGlkYXRlUm91bmQocm91bmRMb3N0KTtcbn1cblxuXG4vKioqKioqKioqKioqKioqKipcbiAqKiBXRUJQQUNLIEZPT1RFUlxuICoqIC4vc3JjL2ZlYXR1cmVzL2RyYWZ0LXBpY2stY2FsY3VsYXRvci9jYWxjdWxhdG9yU2VydmljZS5qc1xuICoqIG1vZHVsZSBpZCA9IDE3M1xuICoqIG1vZHVsZSBjaHVua3MgPSAwXG4gKiovIl0sIm1hcHBpbmdzIjoiQUFBQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQSIsInNvdXJjZVJvb3QiOiIifQ==");
 
-        return false;
-    }
+/***/ }
 
-    vm.changePick = function () {
-        vm.round = null;
-        var pick = vm.pick;
-        //validate pick
-        if (validate(pick)) return
-
-        var result = calcService.getKeeperRoundByPick(numberTeamsPerLeague, pick);
-
-        if (result.error) {
-            vm.result = result.error.message;
-            vm.isError = true;
-        } else {
-            vm.result = "Round Lost: " + result.round;
-        }
-    }
-
-    vm.changeRound = function () {
-        vm.pick = null;
-        var round = vm.round;
-
-        if (validate(round)) return;
-
-        var result = calcService.getKeeperRoundByRound(round);
-
-        if (result.error) {
-            vm.result = result.error.message;
-            vm.isError = true;
-        } else {
-            vm.result = "Round Lost: " + result.round;
-        }
-    }
-}
-
-function service() {
-
-    function getRoundLost(round) {
-        var roundLost = round - 1;
-        var maxRoundLost = 8;
-
-        return roundLost > maxRoundLost ? maxRoundLost : roundLost;
-    }
-
-    function getKeeperRoundByRound(round) {
-        var roundLost = getRoundLost(round);
-
-        return validateRound(roundLost);
-    }
-
-    function getKeeperRoundByPick(numberTeamsPerLeague, pick) {
-        var round = Math.ceil(pick / numberTeamsPerLeague);
-
-        var roundLost = getRoundLost(round);
-
-        return validateRound(roundLost);
-    }
-
-    function validateRound(round) {
-        if (round < 1) {
-            return {
-                error: {
-                    message: 'You can\'t keep a pick selected in the first round.'
-                }
-            }
-        }
-
-        return {
-            round: round
-        }
-    }
-
-    return {
-        getKeeperRoundByPick: getKeeperRoundByPick,
-        getKeeperRoundByRound: getKeeperRoundByRound
-    }
-}
+});
