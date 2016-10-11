@@ -46,7 +46,6 @@ class Calculator extends Component {
 
     render() {
         const {pick, round, roundLost, error} = this.state;
-        console.log(this.state)
 
         const result = error != null
             ? <div className="error">{error.message}</div>

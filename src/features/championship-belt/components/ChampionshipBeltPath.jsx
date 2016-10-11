@@ -27,7 +27,6 @@ class ChampionshipBeltPath extends Component {
     }
 
     onMatchupSelect(week) {
-        console.log(' clicked')
         const {selectedWeek} = this.state;
         const newWeek = selectedWeek === week
             ? null

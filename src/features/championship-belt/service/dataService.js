@@ -93,11 +93,24 @@ const results = [
         week: 4,
         holder: {
             teamId: 2,
+            isWinner: true,
+            score: 104
         },
         challenger: {
             teamId: 8,
+            isWinner: false,
+            score: 91
         }
-    }
+    },
+    {
+        week: 5,
+        holder: {
+            teamId: 2
+        },
+        challenger: {
+            teamId: 7
+        }
+    },
 ]
 
 export const getResults = () => {
