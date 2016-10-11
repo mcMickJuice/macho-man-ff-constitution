@@ -1,18 +1,50 @@
 const teams = {
     1: {
-        team: 'Joyce',
-        imageUrl: ''
+        team: 'Shirtless Vince McMahon',
+        imageUrl: 'http://imgur.com/8fDKrst.png'
     },
     2: {
-        team: 'Shimmy',
-        imageUrl: ''
+        team: 'Los Charros',
+        imageUrl: 'http://imgur.com/wRekjOw.png'
     },
     3: {
-        team: 'Zach',
-        imageUrl: ''
+        team: 'Going Bald(win)',
+        imageUrl: 'http://imgur.com/bVBbu0f.png'
     },
     4: {
-        team: 'Rob',
+        team: 'Team Bobarino',
+        imageUrl: 'http://imgur.com/N9huQtD.png'
+    },
+    5: {
+        team: 'Pack Lives Matter',
+        imageUrl: 'http://imgur.com/5we5ldf.png'
+    }, 
+    6: {
+        team: 'Who Art Thou',
+        imageUrl: 'http://imgur.com/a8vFvDc.png'
+    }, 
+    7: {
+        team: 'Fitz Rawl About The Benjamins',
+        imageUrl: 'http://imgur.com/KYrYeWR.png'
+    },
+    8: {
+        team: 'Large Lacy Lingerie',
+        imageUrl: 'http://imgur.com/XjzsHVZ.png'
+    },
+    9: {
+        team: 'Luby\'s Legends Lube',
+        imageUrl: 'http://imgur.com/vV3953r.png'
+    },
+    10: {
+        team: 'Team DankinData',
+        imageUrl: 'http://imgur.com/gzULWnG.png'
+    },
+    11: {
+        team: 'My Team Cheats',
+        imageUrl: 'http://imgur.com/ihCIv62.png'
+    },
+    12: {
+        team: 'Spider 2 Y Banana Threat',
         imageUrl: ''
     }
 }
@@ -20,39 +52,50 @@ const teams = {
 const results = [
     {
         week: 1,
-        result: '100-90',
         holder: {
-            isWinner: true,
-            teamId: 2,
-            score: 100
+            isWinner: false,
+            teamId: 1,
+            score: 132
         },
         challenger: {
-            isWinner: false,
-            teamId: 4,
-            score: 90
+            isWinner: true,
+            teamId: 3,
+            score: 145
         }
     },
     {
         week: 2,
-        result: '90-105',
         holder: {
             isWinner: false,
-            teamId: 2,
-            score: 105
+            teamId: 3,
+            score: 94
         },
         challenger: {
             isWinner: true,
-            teamId: 4,
-            score: 90
+            teamId: 2,
+            score: 126
         }
     },
     {
         week: 3,
         holder: {
-            teamId: 4
+            isWinner: true,
+            teamId: 2,
+            score: 129
         },
         challenger: {
-            teamId: 3
+            isWinner: false,
+            teamId: 1,
+            score: 121
+        }
+    },
+    {
+        week: 4,
+        holder: {
+            teamId: 2,
+        },
+        challenger: {
+            teamId: 8,
         }
     }
 ]
