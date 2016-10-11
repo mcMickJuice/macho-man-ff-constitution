@@ -7,6 +7,10 @@ var repo = 'test-branch1'
 ghpages.publish(path.join(__dirname, 'dist'), {
     branch: repo,
     message: `deploying to branch: ${repo}`,
+    user: {
+        name: 'Mike Joyce',
+        email: 'mikejoyce19@gmail.com'
+    },
     logger: function(message) {
         console.log(message)
     }
