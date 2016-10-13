@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title></title>
+	<meta charset="UTF-8">
+	<link href="/css/main.css" rel="stylesheet">
+	<script src="/dist/common.js">
+        
+    </script>
+</head>
+
+<body>
+	<div class="mm-header">
+		<div class="macho-man-image">
+
+		</div>
+		<ul>
+			<li>
+				<a href="{{site.baseurl}}/">Home</a>
+			</li>
+			<li>
+				<a href="{{site.baseurl}}/keeper">Keeper</a>
+			</li>
+			<li>
+				<a href="{{site.baseurl}}/championship-belt">Belt</a>
+			</li>
+			<li>
+				<a href="{{site.baseurl}}/posts">Posts</a>
+			</li>
+		</ul>
+	</div>
+	<div class="content-body">
+		<div class="page-title">
+			<h2>
+				{{page.title}}
+			</h2>
+		</div>
+		{{content}}
+	</div>
+
+	<div class="mm-footer">
+		<div class="mm-footer__text">
+			Macho Man Fantasy Football
+
+		</div>
+	</div>
+</body>
+
+</html>

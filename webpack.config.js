@@ -47,22 +47,23 @@ module.exports = {
     devtool: 'cheap-eval-source-map',
     plugins: [
         new CleanWebpackPlugin(['dist']),
-        new webpack.optimize.CommonsChunkPlugin('common.js'),
-        new CopyWebpackPlugin([
-            {
-            context: srcDir,
-            from: '*.html',
-            to: distDir
-        },
-        {
-            from: 'assets',
-            to: path.join(distDir, 'assets'),
-            toType: 'dir'
-        },
-        {
-            from: 'site.css',
-            to: distDir
-        }
-        ])
+        new webpack.optimize.CommonsChunkPlugin('common.js')
+        // ,
+        // new CopyWebpackPlugin([
+        //     {
+        //     context: srcDir,
+        //     from: '*.html',
+        //     to: distDir
+        // },
+        // {
+        //     from: 'assets',
+        //     to: path.join(distDir, 'assets'),
+        //     toType: 'dir'
+        // },
+        // {
+        //     from: 'site.css',
+        //     to: distDir
+        // }
+        // ])
     ]
 }

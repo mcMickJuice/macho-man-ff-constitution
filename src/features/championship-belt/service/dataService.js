@@ -105,12 +105,25 @@ const results = [
     {
         week: 5,
         holder: {
-            teamId: 2
+            teamId: 2,
+            isWinner: false,
+            score: 115
         },
         challenger: {
-            teamId: 7
+            teamId: 7,
+            isWinner: true,
+            score: 183
         }
     },
+    {
+        week: 6,
+        holder: {
+            teamId: 7
+        },
+        challenger: {
+            teamId: 6
+        }
+    }
 ]
 
 export const getResults = () => {

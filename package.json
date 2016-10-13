@@ -5,8 +5,13 @@
   "main": "calculator.js",
   "scripts": {
     "start": "webpack-dev-server --watch --inline",
-    "build": "webpack --config webpack.config.js",
-    "clean": "rm -rf ./dist"
+    "client-build": "webpack --config webpack.config.js",
+    "client-watch": "webpack --config webpack.config.js --watch",
+    "clean": "rm -rf ./dist",
+    "jekyll-build": "jekyll build",
+    "build-site": "npm run client-build&&npm run jekyll-build",
+    "jekyll-run": "jekyll serve",
+    "start-site": "concurrently --kill-others \"npm run client-watch\" \"npm run jekyll-run\""
   },
   "repository": {
     "type": "git",
@@ -32,6 +37,7 @@
     "babel-preset-react": "^6.16.0",
     "babel-preset-stage-0": "^6.16.0",
     "clean-webpack-plugin": "^0.1.13",
+    "concurrently": "^3.1.0",
     "copy-webpack-plugin": "^3.0.1",
     "css-loader": "^0.25.0",
     "gh-pages": "^0.11.0",

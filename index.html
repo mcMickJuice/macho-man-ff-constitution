@@ -1,0 +1,45 @@
+--- 
+layout: default 
+---
+
+<div class="home">
+
+	<div class="side-bar">
+		<h1 class="page-heading">Posts</h1>
+		<ul class="post-list">
+			{% for post in site.posts %}
+			<li>
+				<span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+
+				<h2>
+					<a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title | escape }}</a>
+				</h2>
+			</li>
+			{% endfor %}
+		</ul>
+	</div>
+
+	<div class="container">
+		<h3>Macho Man Constitution</h3>
+		<div class="section">
+			<h4>Purpose</h4>
+			<p>
+				Every year, without fail, the following questions are asked:
+			</p>
+			<ul>
+				<li>What are the keeper rules?</li>
+				<li>Where can I find last year's draft results?</li>
+			</ul>
+		</div>
+        <div>
+            <ul>
+                <li><a href="/keeper">Go to Keeper Rules</a></li>
+                <li>
+                    <a href="/championship-belt">View Current Belt Holder</a>
+                </li>
+            </ul>
+            
+        </div>
+	</div>
+
+</div>
