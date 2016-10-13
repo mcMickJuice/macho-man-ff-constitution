@@ -16,7 +16,5 @@ ghpages.publish(path.join(__dirname, 'dist'), {
         console.error('An error has occurred', err)
         return
     }
-
-    console.log(`Stuff pushed to ${repo}`)
 })
 
