@@ -5,7 +5,8 @@
   "main": "calculator.js",
   "scripts": {
     "start": "webpack-dev-server --watch --inline",
-    "build": "webpack --config webpack.config.js"
+    "build": "webpack --config webpack.config.js",
+    "clean": "rm -rf ./dist"
   },
   "repository": {
     "type": "git",
