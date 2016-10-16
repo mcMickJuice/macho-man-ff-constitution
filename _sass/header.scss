@@ -1,6 +1,42 @@
+@import "common";
 
 .mm-header {
     width: 100%;
-    height: 120px;
-    border-bottom: 1px solid gray;
+    height: 100px;
+    background-color: $primary-color;
+    display: flex;
+    justify-content: space-between;
+    
+    > div {
+        width: 35%;
+    }
+
+&__image {
+    // height: 50px;
+    // width: 50px;
+
+    > img {
+        height: 75px;
+        width: 75px;
+        display: block;
+    border: 1px solid black;
+        
+    }
+}
+
+    &__nav {
+        ul {
+        display: flex;
+
+        }
+
+li {
+    margin-right: 20px;
+}
+
+        a {
+            text-decoration: none;
+            color: $text-color;
+        }
+    }
 }

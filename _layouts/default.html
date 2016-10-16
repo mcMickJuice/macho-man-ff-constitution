@@ -12,39 +12,42 @@
 
 <body>
 	<div class="mm-header">
-		<div class="macho-man-image">
-
+		<div class="mm-header__image">
+			<img src="/assets/macho-man-flexing-raw.jpg" alt="Macho Man">
 		</div>
-		<ul>
-			<li>
-				<a href="{{site.baseurl}}/">Home</a>
-			</li>
-			<li>
-				<a href="{{site.baseurl}}/keeper">Keeper</a>
-			</li>
-			<li>
-				<a href="{{site.baseurl}}/championship-belt">Belt</a>
-			</li>
-			<li>
-				<a href="{{site.baseurl}}/posts">Posts</a>
-			</li>
-		</ul>
+		<div class="mm-header__nav">
+			<ul>
+				<li>
+					<a href="{{site.baseurl}}/">Home</a>
+				</li>
+				<li>
+					<a href="{{site.baseurl}}/keeper">Keeper</a>
+				</li>
+				<li>
+					<a href="{{site.baseurl}}/championship-belt">Belt</a>
+				</li>
+				<li>
+					<a href="{{site.baseurl}}/posts">Posts</a>
+				</li>
+			</ul>
+		</div>
+
 	</div>
 	<div class="content-body">
 		<div class="page-title">
-			<h2>
+			<h1>
 				{{page.title}}
-			</h2>
+			</h1>
 		</div>
 		{{content}}
 	</div>
 
-	<div class="mm-footer">
+	<!--<div class="mm-footer">
 		<div class="mm-footer__text">
 			Macho Man Fantasy Football
 
 		</div>
-	</div>
+	</div>-->
 </body>
 
 </html>
