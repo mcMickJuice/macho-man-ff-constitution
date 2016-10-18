@@ -2,16 +2,14 @@ _site
 .sass-cache
 .jekyll-metadata
 
-# non dist files
-src
-webpack.*
-build
-
 
 # Logs
 logs
 *.log
 npm-debug.log*
+
+# build directories
+dist
 
 # Runtime data
 pids
@@ -45,8 +43,5 @@ jspm_packages
 
 # Optional REPL history
 .node_repl_history
-
-#ide specific files
-.vscode
 
  No newline at end of file
