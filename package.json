@@ -1,0 +1,51 @@
+{
+  "name": "macho-man-ff-constitution",
+  "version": "1.0.0",
+  "description": "",
+  "main": "calculator.js",
+  "scripts": {
+    "start": "webpack-dev-server --watch --inline",
+    "client-build": "webpack --config webpack.prod.config.js",
+    "client-watch": "webpack --config webpack.dev.config.js --watch",
+    "clean": "rm -rf ./dist&&rm -rf ./_site",
+    "jekyll-build": "jekyll build",
+    "build-site": "npm run client-build&&npm run jekyll-build",
+    "jekyll-run": "jekyll serve",
+    "start-site": "concurrently --kill-others \"npm run client-watch\" \"npm run jekyll-run\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mcMickJuice/macho-man-ff-constitution.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mcMickJuice/macho-man-ff-constitution/issues"
+  },
+  "homepage": "https://github.com/mcMickJuice/macho-man-ff-constitution#readme",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2"
+  },
+  "devDependencies": {
+    "babel-core": "^6.16.0",
+    "babel-loader": "^6.2.5",
+    "babel-preset-es2015": "^6.16.0",
+    "babel-preset-react": "^6.16.0",
+    "babel-preset-stage-0": "^6.16.0",
+    "clean-webpack-plugin": "^0.1.13",
+    "concurrently": "^3.1.0",
+    "copy-webpack-plugin": "^3.0.1",
+    "css-loader": "^0.25.0",
+    "gh-pages": "^0.11.0",
+    "less": "^2.7.1",
+    "less-loader": "^2.2.3",
+    "style-loader": "^0.13.1",
+    "tape": "^4.6.0",
+    "webpack": "^1.13.2",
+    "webpack-dev-server": "^1.16.2"
+  }
+}
