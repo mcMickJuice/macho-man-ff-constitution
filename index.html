@@ -13,14 +13,14 @@ title: Macho Man Constitution
 		{% assign post =  site.posts | last %}		
 				<h2>{{post.title}} - {{ post.date | date: "%b %-d, %Y" }}</h2>
 				<div class="mm-front__post-image">
-					<img src="{{post.previewImageUrl}}" alt="{{post.title}}">
+					<img src="{{site.baseurl}}{{post.previewImageUrl}}" alt="{{post.title}}">
 				</div>
 		</div>		
         <div>
             <ul>
-                <li><a href="/keeper">Go to Keeper Rules</a></li>
+                <li><a href="{{site.baseurl}}/keeper">Go to Keeper Rules</a></li>
                 <li>
-                    <a href="/championship-belt">View Current Belt Holder</a>
+                    <a href="{{site.baseurl}}/championship-belt">View Current Belt Holder</a>
                 </li>
             </ul>
             
