@@ -5,9 +5,9 @@
   "main": "calculator.js",
   "scripts": {
     "start": "webpack-dev-server --watch --inline",
-    "client-build": "webpack --config webpack.config.js",
-    "client-watch": "webpack --config webpack.config.js --watch",
-    "clean": "rm -rf ./dist",
+    "client-build": "webpack --config webpack.prod.config.js",
+    "client-watch": "webpack --config webpack.dev.config.js --watch",
+    "clean": "rm -rf ./dist&&rm -rf ./_site",
     "jekyll-build": "jekyll build",
     "build-site": "npm run client-build&&npm run jekyll-build",
     "jekyll-run": "jekyll serve",

@@ -1,7 +1,6 @@
 var webpack = require('webpack')
 var path = require('path');
 var CleanWebpackPlugin = require('clean-webpack-plugin')
-var CopyWebpackPlugin = require('copy-webpack-plugin');
 
 var babelQuery = {
     cacheDirectory: true,
@@ -44,26 +43,8 @@ module.exports = {
             }
         ]
     },
-    devtool: 'cheap-eval-source-map',
     plugins: [
         new CleanWebpackPlugin(['dist']),
         new webpack.optimize.CommonsChunkPlugin('common.js')
-        // ,
-        // new CopyWebpackPlugin([
-        //     {
-        //     context: srcDir,
-        //     from: '*.html',
-        //     to: distDir
-        // },
-        // {
-        //     from: 'assets',
-        //     to: path.join(distDir, 'assets'),
-        //     toType: 'dir'
-        // },
-        // {
-        //     from: 'site.css',
-        //     to: distDir
-        // }
-        // ])
     ]
 }
