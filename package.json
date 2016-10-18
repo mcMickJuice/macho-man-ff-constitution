@@ -10,7 +10,7 @@
     "clean": "rm -rf ./dist&&rm -rf ./_site",
     "jekyll-build": "jekyll build",
     "build-site": "npm run client-build&&npm run jekyll-build",
-    "jekyll-run": "jekyll serve",
+    "jekyll-run": "jekyll serve --config _config.yml,_config.dev.yml",
     "start-site": "concurrently --kill-others \"npm run client-watch\" \"npm run jekyll-run\""
   },
   "repository": {
