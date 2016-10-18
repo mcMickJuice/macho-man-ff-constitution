@@ -179,47 +179,47 @@ webpackJsonp([1],{
 	var teams = {
 	    1: {
 	        team: 'Shirtless Vince McMahon',
-	        imageUrl: 'http://imgur.com/8fDKrst.png'
+	        imageUrl: '//imgur.com/8fDKrst.png'
 	    },
 	    2: {
 	        team: 'Los Charros',
-	        imageUrl: 'http://imgur.com/wRekjOw.png'
+	        imageUrl: '//imgur.com/wRekjOw.png'
 	    },
 	    3: {
 	        team: 'Going Bald(win)',
-	        imageUrl: 'http://imgur.com/bVBbu0f.png'
+	        imageUrl: '//imgur.com/bVBbu0f.png'
 	    },
 	    4: {
 	        team: 'Team Bobarino',
-	        imageUrl: 'http://imgur.com/N9huQtD.png'
+	        imageUrl: '//imgur.com/N9huQtD.png'
 	    },
 	    5: {
 	        team: 'Pack Lives Matter',
-	        imageUrl: 'http://imgur.com/5we5ldf.png'
+	        imageUrl: '//imgur.com/5we5ldf.png'
 	    },
 	    6: {
 	        team: 'Who Art Thou',
-	        imageUrl: 'http://imgur.com/a8vFvDc.png'
+	        imageUrl: '//imgur.com/a8vFvDc.png'
 	    },
 	    7: {
 	        team: 'Fitz Rawl About The Benjamins',
-	        imageUrl: 'http://imgur.com/KYrYeWR.png'
+	        imageUrl: '//imgur.com/KYrYeWR.png'
 	    },
 	    8: {
 	        team: 'Large Lacy Lingerie',
-	        imageUrl: 'http://imgur.com/XjzsHVZ.png'
+	        imageUrl: '//imgur.com/XjzsHVZ.png'
 	    },
 	    9: {
 	        team: 'Luby\'s Legends Lube',
-	        imageUrl: 'http://imgur.com/vV3953r.png'
+	        imageUrl: '//imgur.com/vV3953r.png'
 	    },
 	    10: {
 	        team: 'Team DankinData',
-	        imageUrl: 'http://imgur.com/gzULWnG.png'
+	        imageUrl: '//imgur.com/gzULWnG.png'
 	    },
 	    11: {
 	        team: 'My Team Cheats',
-	        imageUrl: 'http://imgur.com/ihCIv62.png'
+	        imageUrl: '//imgur.com/ihCIv62.png'
 	    },
 	    12: {
 	        team: 'Spider 2 Y Banana Threat',
