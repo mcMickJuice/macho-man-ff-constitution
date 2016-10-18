@@ -2,12 +2,6 @@ _site
 .sass-cache
 .jekyll-metadata
 
-# non dist files
-src
-webpack.*
-build
-
-
 # Logs
 logs
 *.log
