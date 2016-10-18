@@ -1,3 +1,8 @@
+const championshipWeeks = [
+    {week: 7, title: 'Intercontinental Championship', imageUrl: ''},
+    {week: 13, title: 'WCW World Champion', imageUrl: ''}
+]
+
 const teams = {
     1: {
         team: 'Shirtless Vince McMahon',
@@ -118,10 +123,23 @@ const results = [
     {
         week: 6,
         holder: {
+            teamId: 7,
+            isWinner: true,
+            score: 132
+        },
+        challenger: {
+            teamId: 6,
+            isWinner: false,
+            score: 80
+        }
+    },
+    {
+        week: 7,
+        holder: {
             teamId: 7
         },
         challenger: {
-            teamId: 6
+            teamId: 12
         }
     }
 ]
