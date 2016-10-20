@@ -9,10 +9,21 @@ $very-large-font-size: $base-font-size * 2;
 $base-line-height: 1.5;
 $spacing-unit:     30px;
 
+body, html {
+    min-width: $small-width;
+
+    @media(min-width: $medium-width) {
+        min-width: $medium-width;
+    }
+
+    @media(min-width: $large-width) {
+        min-width: $large-width;
+    }
+}
 
 .content-body {
-    width: 70%;
-    min-width: 800px;
+    width: 100%;
+    border: 1px solid black;
     margin: 15px auto;
 
     h1 {
@@ -35,5 +46,13 @@ $spacing-unit:     30px;
         color: $text-color;
         font-size: $base-font-size;
         margin-bottom: $spacing-unit;
+    }
+
+    @media(min-width: $medium-width) {
+        width: 85%;
+    }
+
+    @media(min-width: $large-width) {
+        width: 75%;
     }
 }

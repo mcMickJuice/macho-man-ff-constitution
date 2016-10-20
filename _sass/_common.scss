@@ -8,3 +8,7 @@ $text-color:       #111;
 $grey-color:       #828282;
 $grey-color-light: lighten($grey-color, 40%);
 $grey-color-dark:  darken($grey-color, 25%);
+
+$small-width: 576px;
+$medium-width: 768px;
+$large-width: 992px;
