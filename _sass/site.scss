@@ -10,7 +10,7 @@ $base-line-height: 1.5;
 $spacing-unit:     30px;
 
 body, html {
-    min-width: $small-width;
+    min-width: 0px;
 
     @media(min-width: $medium-width) {
         min-width: $medium-width;
@@ -23,7 +23,6 @@ body, html {
 
 .content-body {
     width: 100%;
-    border: 1px solid black;
     margin: 15px auto;
 
     h1 {
