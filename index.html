@@ -3,28 +3,23 @@ layout: default
 title: Macho Man Constitution
 ---
 
-<div class="home">
-	<div class="container">
-		<h2></h2>
-		<div>
-			<h2>Most Recent Post</h2>
-		</div>
-		<div class="mm-front__post">
-		{% assign post =  site.posts | last %}		
-				<h2>{{post.title}} - {{ post.date | date: "%b %-d, %Y" }}</h2>
-				<div class="mm-front__post-image">
-					<img src="{{site.baseurl}}{{post.previewImageUrl}}" alt="{{post.title}}">
-				</div>
-		</div>		
-        <div>
-            <ul>
-                <li><a href="{{site.baseurl}}/keeper">Go to Keeper Rules</a></li>
-                <li>
-                    <a href="{{site.baseurl}}/championship-belt">View Current Belt Holder</a>
-                </li>
-            </ul>
-            
-        </div>
+<div>
+	<div>
+		<h2>Most Recent Post</h2>
 	</div>
-
+	<div class="mm-front__post">
+	{% assign post =  site.posts | last %}		
+			<h2>{{post.title}} - {{ post.date | date: "%b %-d, %Y" }}</h2>
+			<div class="mm-front__post-image">
+				<img src="{{site.baseurl}}{{post.previewImageUrl}}" alt="{{post.title}}">
+			</div>
+	</div>		
+	<div>
+		<ul>
+			<li><a href="{{site.baseurl}}/keeper">Go to Keeper Rules</a></li>
+			<li>
+				<a href="{{site.baseurl}}/championship-belt">View Current Belt Holder</a>
+			</li>
+		</ul>
+	</div>
 </div>
