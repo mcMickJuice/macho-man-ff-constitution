@@ -11,6 +11,9 @@ $spacing-unit:     30px;
 
 body, html {
     min-width: 0px;
+    font-family: $base-font-family;
+        font-size: $base-font-size;
+    
 
     @media(min-width: $medium-width) {
         min-width: $medium-width;
@@ -24,6 +27,11 @@ body, html {
 .content-body {
     width: 100%;
     margin: 15px auto;
+
+    a {
+        color: black;
+        font-weight: bold;
+    }
 
     h1 {
         color: $secondary-color;
@@ -44,8 +52,15 @@ body, html {
 
     p {
         color: $text-color;
-        font-size: $base-font-size;
         margin-bottom: $spacing-unit;
+    }
+
+    ul {
+        margin-bottom: $spacing-unit;
+    }
+
+    li {
+        margin: 0 10px 10px 10px;
     }
 
     @media(min-width: $medium-width) {
