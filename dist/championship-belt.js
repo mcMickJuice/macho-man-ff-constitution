@@ -152,7 +152,12 @@ webpackJsonp([1],{
 	                    _react2.default.createElement(
 	                        'h2',
 	                        null,
-	                        'Belt Path'
+	                        'Belt Path ',
+	                        _react2.default.createElement(
+	                            'span',
+	                            { className: 'tiny-callout' },
+	                            '(click tile to see matchup details)'
+	                        )
 	                    ),
 	                    _react2.default.createElement(
 	                        'div',
@@ -954,7 +959,7 @@ webpackJsonp([1],{
 	
 	
 	// module
-	exports.push([module.id, ".current-holder-container {\n  margin-bottom: 15px;\n}\n.belt-path-container {\n  margin-bottom: 100px;\n}\n", ""]);
+	exports.push([module.id, ".current-holder-container {\n  margin-bottom: 15px;\n}\n.belt-path-container {\n  margin-bottom: 100px;\n}\n.tiny-callout {\n  font-size: 12px;\n}\n", ""]);
 	
 	// exports
 
