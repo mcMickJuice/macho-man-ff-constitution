@@ -1,7 +1,10 @@
-import React, {Component} from 'react';
-import {getResults} from '../service/dataService'
+import React, { Component } from 'react';
+import { getResults } from '../service/dataService'
 import MatchupTile from './MatchupTile'
 import MatchupPopover from './MatchupPopover'
+import CurrentHolder from './CurrentHolder'
+import MatchupWithPopover from './MatchupWithPopover'
+import * as css from '../styles/championship-belt-path'
 
 class ChampionshipBeltPath extends Component {
     constructor() {
@@ -42,7 +45,7 @@ class ChampionshipBeltPath extends Component {
 
         const resultsElements = results.map(r => {
             return <MatchupWithPopover key={r.week}
-                showPopover={r.week === selectedWeek }
+                showPopover={r.week === selectedWeek}
                 week={r.week}
                 holder={r.holder}
                 challenger={r.challenger}
@@ -55,26 +58,21 @@ class ChampionshipBeltPath extends Component {
             : resultsElements
 
         return <div>
-            <h3>Belt Path</h3>
-            <div style={{display: 'flex'}}>
-                {elementBody}
+            <div className="current-holder-container">
+                <CurrentHolder />
             </div>
+            <div className="belt-path-container">
+                <h2>Belt Path</h2>
+
+                <div style={{ display: 'flex' }}>
+                    {elementBody}
+                </div>
+            </div>
+
         </div>
     }
 }
 
-const MatchupWithPopover = ({showPopover, week, holder, challenger, onMatchupSelected}) => {
-    const popover = showPopover
-        ? <MatchupPopover holder={holder} challenger={challenger} />
-        : '';
 
-    return <div style={{ position: 'relative' }}>
-        {popover}
-        <MatchupTile week={week}
-            holder={holder}
-            challenger={challenger}
-            onMatchupSelected={onMatchupSelected}/>
-    </div>
-}
 
 export default ChampionshipBeltPath;

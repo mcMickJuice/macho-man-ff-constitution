@@ -50,7 +50,7 @@ const teams = {
     },
     12: {
         team: 'Spider 2 Y Banana Threat',
-        imageUrl: ''
+        imageUrl: '//imgur.com/5zNb4YT.png'
     }
 }
 
@@ -158,6 +158,41 @@ export const getResults = () => {
     })
 
     return promise;
+}
+
+function extractCurrentHolderInfo(matchup) {
+    var teamObj = matchup.holder.isWinner ? matchup.holder : matchup.challenger;
+    var {teamId, team, imageUrl} = teamObj;
+
+    return {
+        teamId,
+        team,
+        imageUrl
+    }
+}
+
+export const getCurrentHolder = () => {
+    return getResults()
+        .then(results => {
+            const completedWeeksDescending = results.filter(r => r.holder.score != null)
+                .sort((first, second) => first.week < second.week) //order descending by week
+                
+            const currentHolder = extractCurrentHolderInfo(completedWeeksDescending[0]);
+            const currentStreak = completedWeeksDescending.reduce((streak, next) => {
+                if((next.holder.teamId === currentHolder.teamId || next.challenger.teamId === currentHolder.teamId) && streak.breakOut === false){
+                    streak.streak += 1;
+                } else {
+                    streak.breakOut = true;
+                }
+
+                return streak
+            },{streak:0, breakOut: false});
+
+            return {
+                ...currentHolder,
+                streak: currentStreak.streak
+            }
+        })
 }
 
 function clone(...args) {
