@@ -22,8 +22,7 @@ module.exports = {
     output: {
         filename: '[name].js',
         path: distDir,
-        contentPath: distDir,
-        publicPath: '/'
+        contentPath: distDir
     },
     resolve: {
         extensions: ['', '.less', '.js', '.jsx']
