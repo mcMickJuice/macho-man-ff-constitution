@@ -8,7 +8,7 @@ module.exports = function(app) {
     var publicPath = webpackDevConfig.output.publicPath;
     //only pass to middleware if route matches publicPath
     app.use(publicPath,webpackDevMiddleware(compiler, {
-        publicPath: '', //express strips publicPath from req.path...so just webpack consider bundle at root
+        publicPath: '', //express strips publicPath from req.path...so webpack will consider bundle at root
         stats: {colors: true}
     }))
 }
