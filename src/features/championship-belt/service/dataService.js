@@ -136,10 +136,22 @@ const results = [
     {
         week: 7,
         holder: {
+            teamId: 7,
+            isWinner: true,
+            score: 123
+        },
+        challenger: {
+            teamId: 12,
+            score: 116
+        }
+    },
+        {
+        week: 8,
+        holder: {
             teamId: 7
         },
         challenger: {
-            teamId: 12
+            teamId: 11
         }
     }
 ]
