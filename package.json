@@ -4,14 +4,11 @@
   "description": "",
   "main": "calculator.js",
   "scripts": {
-    "start": "webpack-dev-server --watch --inline",
-    "client-build": "webpack --config webpack.prod.config.js",
-    "client-watch": "webpack --config webpack.dev.config.js --watch",
-    "clean": "rm -rf ./dist&&rm -rf ./_site",
+    "client-prod-build": "webpack --config webpack.prod.config.js",
     "jekyll-build": "jekyll build",
-    "build-site": "npm run client-build&&npm run jekyll-build",
-    "jekyll-run": "jekyll serve --config _config.yml,_config.dev.yml",
-    "start-site": "concurrently --kill-others \"npm run client-watch\" \"npm run jekyll-run\""
+    "jekyll-run": "jekyll serve --config _config.yml,_config.dev.yml --port 5000",
+    "start-site": "concurrently --kill-others \"npm run client-watch\" \"npm run jekyll-run\"",
+    "client-watch": "set CLIENT_PORT=4001&&set JEKYLL_PORT=5000&&node src/dev-server/server"
   },
   "repository": {
     "type": "git",
@@ -38,14 +35,13 @@
     "babel-preset-stage-0": "^6.16.0",
     "clean-webpack-plugin": "^0.1.13",
     "concurrently": "^3.1.0",
-    "copy-webpack-plugin": "^3.0.1",
     "css-loader": "^0.25.0",
-    "gh-pages": "^0.11.0",
+    "express": "^4.14.0",
+    "express-http-proxy": "^0.10.0",
     "less": "^2.7.1",
     "less-loader": "^2.2.3",
     "style-loader": "^0.13.1",
-    "tape": "^4.6.0",
     "webpack": "^1.13.2",
-    "webpack-dev-server": "^1.16.2"
+    "webpack-dev-middleware": "^1.8.4"
   }
 }
