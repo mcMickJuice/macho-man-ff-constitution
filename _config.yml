@@ -27,4 +27,4 @@ github_username:  mcMickJuice
 # Build settings
 markdown: kramdown
 theme: minima
-exclude: ['node_modules', 'src', 'build']
+exclude: ['node_modules', 'src', 'build', 'spec']

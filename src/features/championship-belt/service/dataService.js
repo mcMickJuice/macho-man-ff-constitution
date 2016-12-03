@@ -245,12 +245,15 @@ function extractCurrentHolderInfo(matchup) {
 }
 
 export const getCurrentHolder = () => {
+
+
     return getResults()
         .then(results => {
             const completedWeeksDescending = results.filter(r => r.holder.score != null)
-                .sort((first, second) => first.week < second.week) //order descending by week
+                .sort((first, second) => second.week - first.week) //order descending by week
 
-            const currentHolder = extractCurrentHolderInfo(completedWeeksDescending[0]);
+            var currentWeek = completedWeeksDescending[0];
+            const currentHolder = extractCurrentHolderInfo(currentWeek);
             const currentStreak = completedWeeksDescending.reduce((streak, next) => {
                 if ((next.holder.teamId === currentHolder.teamId || next.challenger.teamId === currentHolder.teamId) && streak.breakOut === false) {
                     streak.streak += 1;
