@@ -1,6 +1,6 @@
 const championshipWeeks = [
-    {week: 7, title: 'Intercontinental Championship', imageUrl: ''},
-    {week: 13, title: 'WCW World Champion', imageUrl: ''}
+    { week: 7, title: 'Intercontinental Championship', imageUrl: '' },
+    { week: 13, title: 'WCW World Champion', imageUrl: '' }
 ]
 
 const teams = {
@@ -23,22 +23,23 @@ const teams = {
     5: {
         team: 'Pack Lives Matter',
         imageUrl: '//imgur.com/5we5ldf.png'
-    }, 
+    },
     6: {
         team: 'Who Art Thou',
         imageUrl: '//imgur.com/a8vFvDc.png'
-    }, 
+    },
     7: {
         team: 'Fitz Rawl About The Benjamins',
         imageUrl: '//imgur.com/KYrYeWR.png'
     },
     8: {
         team: 'Large Lacy Lingerie',
-        imageUrl: '//imgur.com/XjzsHVZ.png'
+        imageUrl: '//imgur.com/vV3953r.png'
     },
     9: {
         team: 'Luby\'s Legends Lube',
-        imageUrl: '//imgur.com/vV3953r.png'
+        imageUrl: '//imgur.com/XjzsHVZ.png'
+
     },
     10: {
         team: 'Team DankinData',
@@ -145,13 +146,73 @@ const results = [
             score: 116
         }
     },
-        {
+    {
         week: 8,
         holder: {
-            teamId: 7
+            teamId: 7,
+            score: 89
         },
         challenger: {
-            teamId: 11
+            teamId: 11,
+            score: 140,
+            isWinner: true
+        }
+    },
+    {
+        week: 9,
+        holder: {
+            teamId: 11,
+            score: 130,
+            isWinner: true
+        },
+        challenger: {
+            teamId: 10,
+            score: 118
+        }
+    },
+    {
+        week: 10,
+        holder: {
+            teamId: 11,
+            score: 112
+        },
+        challenger: {
+            teamId: 8,
+            score: 149,
+            isWinner: true
+        }
+    },
+    {
+        week: 11,
+        holder: {
+            teamId: 8,
+            score: 96
+        },
+        challenger: {
+            teamId: 9,
+            score: 106,
+            isWinner: true
+        }
+    },
+    {
+        week: 12,
+        holder: {
+            teamId: 9,
+            score: 83
+        },
+        challenger: {
+            teamId: 10,
+            score: 85,
+            isWinner: true
+        }
+    },
+        {
+        week: 13,
+        holder: {
+            teamId: 10,
+        },
+        challenger: {
+            teamId: 8
         }
     }
 ]
@@ -162,7 +223,7 @@ export const getResults = () => {
             let holder = clone(teams[next.holder.teamId], next.holder);
             let challenger = clone(teams[next.challenger.teamId], next.challenger);
 
-            acc.push(clone(next, {holder, challenger}))
+            acc.push(clone(next, { holder, challenger }))
 
             return acc;
         }, [])
@@ -188,21 +249,21 @@ export const getCurrentHolder = () => {
         .then(results => {
             const completedWeeksDescending = results.filter(r => r.holder.score != null)
                 .sort((first, second) => first.week < second.week) //order descending by week
-                
+
             const currentHolder = extractCurrentHolderInfo(completedWeeksDescending[0]);
             const currentStreak = completedWeeksDescending.reduce((streak, next) => {
-                if((next.holder.teamId === currentHolder.teamId || next.challenger.teamId === currentHolder.teamId) && streak.breakOut === false){
+                if ((next.holder.teamId === currentHolder.teamId || next.challenger.teamId === currentHolder.teamId) && streak.breakOut === false) {
                     streak.streak += 1;
                 } else {
                     streak.breakOut = true;
                 }
 
                 return streak
-            },{streak:0, breakOut: false});
+            }, { streak: 0, breakOut: false });
 
             return {
                 ...currentHolder,
-                streak: currentStreak.streak
+        streak: currentStreak.streak
             }
         })
 }
