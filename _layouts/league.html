@@ -4,17 +4,21 @@ subnav :
     root: "league"
     subnav: [{
         label: "League",
-        route: ""
+        route: "",
+        subroutes: ["/"]
     },
     {
         label: "Constitution",
-        route: "constitution"
+        route: "constitution",
+        subroutes: ["/constitution.html"]
     }, {
         label: "Keeper",
-        route: "keeper"
+        route: "keeper",
+        subroutes: ["/keeper/", "/keeper/calculator.html"]
     }, {
         label: "Belt",
-        route: "belt"
+        route: "belt",
+        subroutes: ["/belt/", "/belt/path.html"]
     }]
 ---
 {{content}}

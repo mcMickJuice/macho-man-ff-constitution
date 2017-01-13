@@ -42,7 +42,14 @@
 		{% assign subnav = layout.subnav['subnav'] %} 
 		{% assign rootUrl = layout.subnav['root'] %}
 		{% for nav in subnav %}
-		<div class="subnav__item">
+		{% assign activeClass = nil %}
+		{% for sub in nav.subroutes %}
+			{% assign subRoute = '/' | append: rootUrl | append: sub %}
+			{% if page.url == subRoute %}
+				{% assign activeClass = "subnav__item--active" %}
+			{% endif %}
+		{% endfor %}
+		<div class="subnav__item {{activeClass}}">
 			<a href="{{site.baseurl}}/{{rootUrl}}/{{nav.route}}">{{nav.label}}</a>
 	    </div>
 		{% endfor %}
