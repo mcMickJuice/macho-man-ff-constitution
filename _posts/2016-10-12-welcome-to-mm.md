@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Welcome to Macho Man Site
-previewImageUrl: /assets/welcome-mm.jpg
+previewImageUrl: /assets/macho-man-flexing-post.png
 ---
 
 <div>

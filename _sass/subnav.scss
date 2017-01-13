@@ -1,0 +1,38 @@
+@import 'common';
+
+$hover-color: white;
+
+@mixin tab-active {
+    background-color: white;
+    a {
+        color: black;
+    }
+}
+
+.subnav {
+background-color: #a9a5a6;
+display: flex;
+justify-content: space-between;
+height: 50px;
+line-height: 50px;
+
+    &__item {
+        font-size: 16px;
+        flex-grow: 1;
+
+        &:hover {
+            @include tab-active;
+        }
+
+        a {
+            text-align: center;
+                display: block;
+            color: white;
+            text-decoration: none;
+        }
+
+        &--active {
+            @include tab-active;
+        }
+    }
+}

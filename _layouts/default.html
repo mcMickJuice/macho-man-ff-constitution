@@ -4,36 +4,51 @@
 <head>
 	<title>{{page.title}}</title>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1" >
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href="{{site.baseurl}}/css/main.css" rel="stylesheet">
 	<script src="{{site.baseurl}}/dist/common.js">
-        
-    </script>
+
+	</script>
 </head>
 
 <body>
 	<div class="header">
-		<div class="image">
-			<img src="{{site.baseurl}}/assets/macho-man-flexing-raw.jpg" alt="Macho Man">
+		<div class="header__section">
+			<a href="{{site.baseurl}}/">
+				<img class="header__image" src="{{site.baseurl}}/assets/macho-man-flexing-header.png" width=75 alt="Macho Man">
+
+			</a>
 		</div>
-		<!--<div class="nav">
-			<ul>
-				<li>
+		<div class="header__section">
+			<div class="header__nav">
+				<div class="header__nav__nav-item">
 					<a href="{{site.baseurl}}/">Home</a>
-				</li>
-				<li>
-					<a href="{{site.baseurl}}/keeper">Keeper</a>
-				</li>
-				<li>
-					<a href="{{site.baseurl}}/championship-belt">Belt</a>
-				</li>
-				<li>
+
+				</div>
+				<div class="header__nav__nav-item">
+					<a href="{{site.baseurl}}/league">League Info</a>
+
+				</div>
+				<div class="header__nav__nav-item">
 					<a href="{{site.baseurl}}/posts">Posts</a>
-				</li>
-			</ul>
-		</div>-->
+				</div>
+			</div>
+		</div>
+
 
 	</div>
+	{% if layout.subnav %}
+	<div class="subnav">
+		{% assign subnav = layout.subnav['subnav'] %} 
+		{% assign rootUrl = layout.subnav['root'] %}
+		{% for nav in subnav %}
+		<div class="subnav__item">
+			<a href="{{site.baseurl}}/{{rootUrl}}/{{nav.route}}">{{nav.label}}</a>
+	    </div>
+		{% endfor %}
+	</div>
+	{% endif %}
+
 	<div class="content-body">
 		<div class="page-title">
 			<h1>
@@ -42,13 +57,6 @@
 		</div>
 		{{content}}
 	</div>
-
-	<!--<div class="mm-footer">
-		<div class="mm-footer__text">
-			Macho Man Fantasy Football
-
-		</div>
-	</div>-->
 </body>
 
 </html>
