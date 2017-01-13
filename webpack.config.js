@@ -4,7 +4,8 @@ var CleanWebpackPlugin = require('clean-webpack-plugin')
 
 var babelQuery = {
     cacheDirectory: true,
-    presets: ['stage-0', 'es2015', 'react']
+    presets: ['es2015', 'react'],
+    plugins:['transform-object-rest-spread']
 }
 
 var featureDir = path.join(__dirname, 'src/features')
