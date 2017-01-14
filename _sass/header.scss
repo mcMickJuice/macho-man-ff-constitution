@@ -3,7 +3,7 @@
 .header
 {
     width: 100%;
-    min-height: 60px;
+    // min-height: 60px;
     background-color: $primary-color;
     position: relative;
 
@@ -18,59 +18,80 @@
         }
     }
 
-    &__image {
+    &__mobile-header {
+        display: flex;
+        justify-content: space-between;
 
+        & > div {
+            margin: 2px 10px 8px 10px;
+        }
+
+        @media(min-width: $medium-width) {
             display: block;
-            border: 1px solid black;
-        
-    }
+        }
 
-    &__menu-icon {
-        position: absolute;
+        &__menu-icon {
         width: 45px;
         height: 45px;
         border: 1px solid grey;
         border-radius: 2px;
         cursor: pointer;
-        top: 5px;
-        right: 10px;
         background-color: lightgray;
 
-        &--active {
-            & > div {
-                transform: rotate(225deg);
+            @media(min-width: $medium-width) {
+                display: none;
+            }
 
+            &--active {
+                & > div {
+                    transform: rotate(225deg);
+
+                }
+            }
+
+            &__chevron {
+                width: 38%;
+                height: 40%;
+                position: relative;
+                display: block;
+                top: 10px;
+                margin: auto;
+                border-right: 1px solid black;
+                border-bottom: 1px solid black;
+                transform: rotate(45deg); 
+                transition: transform 0.4s;
             }
         }
 
-        &__chevron {
-            width: 38%;
-            height: 40%;
-            position: relative;
-            display: block;
-            top: 10px;
-            margin: auto;
-            border-right: 1px solid black;
-            border-bottom: 1px solid black;
-            transform: rotate(45deg); 
-            transition: transform 0.4s;
-        }
+    }
+
+
+    &__logo {
+        &__image {
+                    display: block;
+                    border: 1px solid black;
+                
+            }
     }
 
     &__nav {
         display: flex;
         justify-content: space-between;
         height: 0;
-        line-height: 60px;
+        font-size: 16px;
+        line-height: 50px;
         overflow: hidden;
+        background-color: lightgray;
+        transition: height 0.4s;
 
         &--active {
-            height: 40px;
+            height: 50px;
         }
 
 
         @media (min-width: $medium-width) {
             height: 100%;
+            background-color: initial;
             &--active {
                 height: inherit;
             }
@@ -88,6 +109,7 @@
             }
              a {
                  font-weight: 600;
+                 display: block;
                         color: $white-color;
                     text-decoration: none;
             }

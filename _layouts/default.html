@@ -13,11 +13,17 @@
 
 <body>
 	<div class="header">
-		<div class="header__section">
-			<a href="{{site.baseurl}}/">
-				<img class="header__image" src="{{site.baseurl}}/assets/macho-man-flexing-header.png" width=75 alt="Macho Man">
+		<div class="header__section  header__mobile-header"> <!--ummm different class name than mobile?-->
+			<div class="header__logo">
+				<a href="{{site.baseurl}}/">
+					<img class="header__logo__image" src="{{site.baseurl}}/assets/macho-man-flexing-header.png" width=75 alt="Macho Man">
+				</a>
+			</div>
+			<div id="headerMenuBtn" class="header__mobile-header__menu-icon">
+				<div class="header__mobile-header__menu-icon__chevron">
 
-			</a>
+				</div>
+			</div>
 		</div>
 		<div class="header__section">
 			<div id="headerNav" class="header__nav">
@@ -34,29 +40,17 @@
 				</div>
 			</div>
 		</div>
-		<div id="headerMenuBtn" class="header__menu-icon">
-			<div class="header__menu-icon__chevron">
-
-			</div>
-		</div>	
 
 
 	</div>
 	{% if layout.subnav %}
 	<div class="subnav">
-		{% assign subnav = layout.subnav['subnav'] %} 
-		{% assign rootUrl = layout.subnav['root'] %}
-		{% for nav in subnav %}
-		{% assign activeClass = nil %}
-		{% for sub in nav.subroutes %}
-			{% assign subRoute = '/' | append: rootUrl | append: sub %}
-			{% if page.url == subRoute %}
-				{% assign activeClass = "subnav__item--active" %}
-			{% endif %}
-		{% endfor %}
+		{% assign subnav = layout.subnav['subnav'] %} {% assign rootUrl = layout.subnav['root'] %} {% for nav in subnav %} {% assign
+		activeClass = nil %} {% for sub in nav.subroutes %} {% assign subRoute = '/' | append: rootUrl | append: sub %} {% if page.url
+		== subRoute %} {% assign activeClass = "subnav__item--active" %} {% endif %} {% endfor %}
 		<div class="subnav__item {{activeClass}}">
 			<a href="{{site.baseurl}}/{{rootUrl}}/{{nav.route}}">{{nav.label}}</a>
-	    </div>
+		</div>
 		{% endfor %}
 	</div>
 	{% endif %}
@@ -76,7 +70,7 @@
 		function toggleClass(elem, cls) {
 			var hasClass = elem.classList.contains(cls);
 
-			if(hasClass) {
+			if (hasClass) {
 				elem.classList.remove(cls);
 			} else {
 				elem.classList.add(cls)
@@ -89,11 +83,11 @@
 		var headerNav = document.querySelector('#headerNav');
 
 		var activeNavClass = 'header__nav--active';
-		var activeMenuIconClass = 'header__menu-icon--active';
+		var activeMenuIconClass = 'header__mobile-header__menu-icon--active';
 
-		menuBtn.addEventListener('click', function() {
+		menuBtn.addEventListener('click', function () {
 			//toggle active class on headerNav
-			toggleClass(headerNav,activeNavClass)
+			toggleClass(headerNav, activeNavClass)
 
 			//toggle active class on menu btn
 			toggleClass(menuBtn, activeMenuIconClass)
