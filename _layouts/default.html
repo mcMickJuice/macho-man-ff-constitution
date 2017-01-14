@@ -20,7 +20,7 @@
 			</a>
 		</div>
 		<div class="header__section">
-			<div class="header__nav">
+			<div id="headerNav" class="header__nav">
 				<div class="header__nav__nav-item">
 					<a href="{{site.baseurl}}/">Home</a>
 
@@ -34,6 +34,11 @@
 				</div>
 			</div>
 		</div>
+		<div id="headerMenuBtn" class="header__menu-icon">
+			<div class="header__menu-icon__chevron">
+
+			</div>
+		</div>	
 
 
 	</div>
@@ -64,6 +69,36 @@
 		</div>
 		{{content}}
 	</div>
+	<script>
+		//headerMenuBtn
+		//header__menu-icon) 
+
+		function toggleClass(elem, cls) {
+			var hasClass = elem.classList.contains(cls);
+
+			if(hasClass) {
+				elem.classList.remove(cls);
+			} else {
+				elem.classList.add(cls)
+			}
+		}
+
+		//nav item
+
+		var menuBtn = document.querySelector('#headerMenuBtn');
+		var headerNav = document.querySelector('#headerNav');
+
+		var activeNavClass = 'header__nav--active';
+		var activeMenuIconClass = 'header__menu-icon--active';
+
+		menuBtn.addEventListener('click', function() {
+			//toggle active class on headerNav
+			toggleClass(headerNav,activeNavClass)
+
+			//toggle active class on menu btn
+			toggleClass(menuBtn, activeMenuIconClass)
+		})
+	</script>
 </body>
 
 </html>
