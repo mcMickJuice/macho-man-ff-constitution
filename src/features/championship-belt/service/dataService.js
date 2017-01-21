@@ -3,7 +3,7 @@ const championshipWeeks = [
     { week: 13, title: 'WCW World Champion', imageUrl: '' }
 ]
 
-const teams = {
+let teams = {
     1: {
         team: 'Shirtless Vince McMahon',
         imageUrl: '//imgur.com/8fDKrst.png'
@@ -54,6 +54,12 @@ const teams = {
         imageUrl: '//imgur.com/5zNb4YT.png'
     }
 }
+
+teams = Object.keys(teams).map(key => {
+    var team = teams[key];
+    return Object.assign({}, team, { imageUrl: '/assets/kevin-nash-belt-raw.jpg' })
+})
+
 
 const results = [
     {
@@ -206,7 +212,7 @@ const results = [
             isWinner: true
         }
     },
-        {
+    {
         week: 13,
         holder: {
             teamId: 10,
@@ -266,7 +272,7 @@ export const getCurrentHolder = () => {
 
             return {
                 ...currentHolder,
-        streak: currentStreak.streak
+                streak: currentStreak.streak
             }
         })
 }
