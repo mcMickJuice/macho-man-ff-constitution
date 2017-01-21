@@ -6,9 +6,18 @@ $callout-color: #EF8354;
 
 $text-color:       #111;
 $grey-color:       #828282;
-$grey-color-light: lighten($grey-color, 40%);
+$grey-color-light: lighten($grey-color, 20%);
 $grey-color-dark:  darken($grey-color, 25%);
 
 $small-width: 320px;
 $medium-width: 768px;
 $large-width: 992px;
+
+$base-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+$base-font-size:   15px;
+$base-font-weight: 400;
+$small-font-size:  $base-font-size * 0.875;
+$large-font-size: $base-font-size * 1.25;
+$very-large-font-size: $base-font-size * 2;
+$base-line-height: 1.5;
+$spacing-unit:     23px;
