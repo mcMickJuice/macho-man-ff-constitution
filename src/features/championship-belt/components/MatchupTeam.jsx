@@ -1,6 +1,6 @@
 import React, {PropTypes} from 'react';
 import {teamShape} from './shapes'
-import css from '../styles/matchup-team.less'
+import * as css from '../styles/matchup-team.less'
 
 const MatchupTeam = ({team}) => {
     const {team: teamName, isWinner, score} = team;
@@ -14,6 +14,8 @@ const MatchupTeam = ({team}) => {
     </div>
 }
 
-MatchupTeam.propTypes = teamShape
+MatchupTeam.propTypes = {
+    team: teamShape    
+}
 
 export default MatchupTeam

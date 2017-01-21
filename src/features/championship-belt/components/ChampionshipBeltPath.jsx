@@ -64,7 +64,7 @@ class ChampionshipBeltPath extends Component {
             <div className="belt-path-container">
                 <h2>Belt Path <span className="tiny-callout">(click tile to see matchup details)</span></h2>
 
-                <div style={{ display: 'flex' }}>
+                <div>
                     {elementBody}
                 </div>
             </div>

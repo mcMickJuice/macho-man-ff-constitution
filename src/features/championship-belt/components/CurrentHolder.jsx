@@ -1,6 +1,6 @@
 import React, { propTypes, Component } from 'react'
 import { getCurrentHolder } from '../service/dataService'
-import * as less from '../styles/current-holder'
+import * as css from '../styles/current-holder'
 
 class CurrentHolder extends Component {
     constructor() {

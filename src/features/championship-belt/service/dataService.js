@@ -55,9 +55,9 @@ let teams = {
     }
 }
 
-teams = Object.keys(teams).map(key => {
+Object.keys(teams).forEach(key => {
     var team = teams[key];
-    return Object.assign({}, team, { imageUrl: '/assets/kevin-nash-belt-raw.jpg' })
+    team.imageUrl=  '/assets/kevin-nash-belt-raw.jpg'
 })
 
 
