@@ -1,0 +1,11 @@
+@import '_common';
+
+//standard rules for any content that's within the .post class on post layout
+
+.post-container {
+    p {
+        margin-bottom: $spacing-unit;
+        font-size: $base-font-size;
+        line-height: $base-font-size + 3px;
+    }
+}
