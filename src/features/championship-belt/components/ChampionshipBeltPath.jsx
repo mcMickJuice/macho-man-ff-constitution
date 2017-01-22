@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import { getResults } from '../service/dataService'
 import MatchupTile from './MatchupTile'
-import MatchupPopover from './MatchupPopover'
+import MatchupPopover from './MatchupPopover';
 import CurrentHolder from './CurrentHolder'
-import MatchupWithPopover from './MatchupWithPopover'
 import * as css from '../styles/championship-belt-path'
 
 class ChampionshipBeltPath extends Component {
@@ -34,7 +33,7 @@ class ChampionshipBeltPath extends Component {
         const newWeek = selectedWeek === week
             ? null
             : week;
-
+        
         this.setState({
             selectedWeek: newWeek
         })
@@ -44,8 +43,7 @@ class ChampionshipBeltPath extends Component {
         const {results, isLoading, selectedWeek} = this.state;
 
         const resultsElements = results.map(r => {
-            return <MatchupWithPopover key={r.week}
-                showPopover={r.week === selectedWeek}
+            return <MatchupTile key={r.week}
                 week={r.week}
                 holder={r.holder}
                 challenger={r.challenger}
@@ -53,22 +51,30 @@ class ChampionshipBeltPath extends Component {
                 />
         })
 
+        const selectedMatchup = results.filter(r => r.week === selectedWeek)[0]
+
+        const selectedMatchupElement = selectedMatchup != null
+            ? <MatchupPopover
+                holder={selectedMatchup.holder}
+                challenger={selectedMatchup.challenger}
+             />
+             : '';
+
         const elementBody = isLoading
             ? <div>Loading...</div>
             : resultsElements
 
         return <div>
-            <div className="current-holder-container">
+            <div className="mm-belt__current-holder">
                 <CurrentHolder />
             </div>
-            <div className="belt-path-container">
-                <h2>Belt Path <span className="tiny-callout">(click tile to see matchup details)</span></h2>
-
-                <div>
+            <h2>Belt Path <span className="mm-belt__callout--tiny">(click tile to see matchup details)</span></h2>
+            <div className="mm-belt__belt-path">
                     {elementBody}
-                </div>
             </div>
-
+            <div className="mm-belt__selected-matchup">
+                {selectedMatchupElement}
+            </div>
         </div>
     }
 }
