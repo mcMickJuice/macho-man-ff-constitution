@@ -2,11 +2,6 @@ var webpack = require('webpack');
 var baseWebpack = require('./webpack.config')
 
 var config = {
-    //YOU NEED TO CONCAT THE PLUGINS HERE!
-    // resolve: {
-    //     alias:
-    //include minified versions of react and the like! 
-    // }
     plugins: [
         new webpack.DefinePlugin({
             'process.env': {
@@ -14,9 +9,9 @@ var config = {
             }
         }),
         new webpack.optimize.UglifyJsPlugin({
-            compress: {
-                warnings: false
-            }
+            // compress: {
+            //     warnings: false
+            // } //default setting is false // webpack 2 change
         })
     ]
 }

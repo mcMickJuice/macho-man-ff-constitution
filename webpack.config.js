@@ -2,12 +2,6 @@ var webpack = require('webpack')
 var path = require('path');
 var CleanWebpackPlugin = require('clean-webpack-plugin')
 
-var babelQuery = {
-    cacheDirectory: true,
-    presets: ['es2015', 'react'],
-    plugins:['transform-object-rest-spread']
-}
-
 var featureDir = path.join(__dirname, 'src/features')
 var srcDir = path.join(__dirname, 'src')
 var distDir = path.join(__dirname, 'dist');
@@ -15,7 +9,6 @@ var distDir = path.join(__dirname, 'dist');
 module.exports = {
     entry:
     {
-        // vendor: ['react', 'react-dom'],
         calculator: path.join(featureDir, 'draft-pick-calculator/index.jsx'),
         "championship-belt": path.join(featureDir, 'championship-belt/index.jsx')
 
@@ -23,28 +16,41 @@ module.exports = {
     output: {
         filename: '[name].js',
         path: distDir,
-        contentPath: distDir
+        publicPath: distDir
     },
     resolve: {
-        extensions: ['', '.less', '.js', '.jsx']
+        // extensions: ['', '.less', '.js', '.jsx']
+        extensions: ['.less', '.js', '.jsx'] //removed empty extension webpack 2 change
     },
     module: {
-        loaders: [
+        // loaders: [
+        rules: [
             {
                 test: /\.jsx?$/,
                 include: path.join(__dirname, 'src'),
-                loader: 'babel',
-                query: babelQuery
+                // loader: 'babel',
+                loader: 'babel-loader',
+                // query: babelQuery
+                options: {
+                    cacheDirectory: true,
+                    presets: ['es2015', 'react'],
+                    plugins: ['transform-object-rest-spread']
+                }
             },
             {
                 test: /\.less$/,
                 include: path.join(__dirname, './src'),
-                loader: 'style!css!less'
+                // loader: 'style!css!less'
+                use: [
+                    "style-loader",
+                    "css-loader",
+                    "less-loader"
+                ]
             }
         ]
     },
     plugins: [
         new CleanWebpackPlugin(['dist']),
-        new webpack.optimize.CommonsChunkPlugin('common.js')
+        new webpack.optimize.CommonsChunkPlugin('common')
     ]
 }
