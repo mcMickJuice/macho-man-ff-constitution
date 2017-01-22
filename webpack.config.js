@@ -19,18 +19,14 @@ module.exports = {
         publicPath: distDir
     },
     resolve: {
-        // extensions: ['', '.less', '.js', '.jsx']
-        extensions: ['.less', '.js', '.jsx'] //removed empty extension webpack 2 change
+        extensions: ['.less', '.js', '.jsx']
     },
     module: {
-        // loaders: [
         rules: [
             {
                 test: /\.jsx?$/,
                 include: path.join(__dirname, 'src'),
-                // loader: 'babel',
                 loader: 'babel-loader',
-                // query: babelQuery
                 options: {
                     cacheDirectory: true,
                     presets: ['es2015', 'react'],
@@ -40,7 +36,6 @@ module.exports = {
             {
                 test: /\.less$/,
                 include: path.join(__dirname, './src'),
-                // loader: 'style!css!less'
                 use: [
                     "style-loader",
                     "css-loader",

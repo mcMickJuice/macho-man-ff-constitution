@@ -8,11 +8,7 @@ var config = {
                 'NODE_ENV': JSON.stringify("production")
             }
         }),
-        new webpack.optimize.UglifyJsPlugin({
-            // compress: {
-            //     warnings: false
-            // } //default setting is false // webpack 2 change
-        })
+        new webpack.optimize.UglifyJsPlugin({})
     ]
 }
 
