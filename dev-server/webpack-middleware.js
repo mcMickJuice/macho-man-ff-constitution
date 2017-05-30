@@ -1,6 +1,6 @@
 var webpack = require('webpack')
 var webpackDevMiddleware = require('webpack-dev-middleware');
-var webpackDevConfig = require('../../webpack.dev.config');
+var webpackDevConfig = require('../webpack.dev.config');
 
 
 module.exports = function(app) {
