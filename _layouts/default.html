@@ -4,9 +4,12 @@
 <head>
 	<title>{{page.title}}</title>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
-	<link href="{{site.baseurl}}/css/main.css" rel="stylesheet">
+	<meta name="viewport"
+	 content="width=device-width, initial-scale=1">
+	<link href="https://fonts.googleapis.com/css?family=Rubik"
+	 rel="stylesheet">
+	<link href="{{site.baseurl}}/css/main.css"
+	 rel="stylesheet">
 	<script src="{{site.baseurl}}/dist/common.js">
 
 	</script>
@@ -14,20 +17,23 @@
 
 <body>
 	<div class="header">
-		<div class="header__section  header__mobile-header"> <!--ummm different class name than mobile?-->
+		<div class="header__section  header__mobile-header">
+			<!--ummm different class name than mobile?-->
 			<div class="header__logo">
 				<a href="{{site.baseurl}}/">
 					<img class="header__logo__image" src="{{site.baseurl}}/assets/macho-man-flexing-header.png" width=75 alt="Macho Man">
 				</a>
 			</div>
-			<div id="headerMenuBtn" class="header__mobile-header__menu-icon">
+			<div id="headerMenuBtn"
+			 class="header__mobile-header__menu-icon">
 				<div class="header__mobile-header__menu-icon__chevron">
 
 				</div>
 			</div>
 		</div>
 		<div class="header__section">
-			<div id="headerNav" class="header__nav">
+			<div id="headerNav"
+			 class="header__nav">
 				<div class="header__nav__nav-item">
 					<a href="{{site.baseurl}}/">Home</a>
 
@@ -46,9 +52,15 @@
 	</div>
 	{% if layout.subnav %}
 	<div class="subnav">
-		{% assign subnav = layout.subnav['subnav'] %} {% assign rootUrl = layout.subnav['root'] %} {% for nav in subnav %} {% assign
-		activeClass = nil %} {% for sub in nav.subroutes %} {% assign subRoute = '/' | append: rootUrl | append: sub %} {% if page.url
-		== subRoute %} {% assign activeClass = "subnav__item--active" %} {% endif %} {% endfor %}
+		{% assign subnav = layout.subnav['subnav'] %} 
+		{% assign rootUrl = layout.subnav['root'] %} 
+		{% for nav in subnav %} 
+		{% assign activeClass = nil %} 
+		{% for sub in nav.subroutes %} 
+		{% assign subRoute = '/' | append: rootUrl | append: sub %} 
+		{% if page.url == subRoute %} 
+		{% assign activeClass = "subnav__item--active" %} 
+		{% endif %} {% endfor %}
 		<div class="subnav__item {{activeClass}}">
 			<a href="{{site.baseurl}}/{{rootUrl}}/{{nav.route}}">{{nav.label}}</a>
 		</div>
@@ -56,18 +68,19 @@
 	</div>
 	{% endif %}
 
-	<div class="content-body">
-		<div class="page-title">
+	<div>
+		<div class="page-title responsive-container">
 			<h1>
 				{{page.title}}
 			</h1>
 		</div>
-		{{content}}
+		<!--<div class="content-body">-->
+			{{content}}
+		<!--</div>-->
+	</div>
+	<div class="mm-footer">
 	</div>
 	<script>
-		//headerMenuBtn
-		//header__menu-icon) 
-
 		function toggleClass(elem, cls) {
 			var hasClass = elem.classList.contains(cls);
 

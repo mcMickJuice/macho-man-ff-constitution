@@ -9,9 +9,14 @@ title: Macho Man Constitution
 	</div>
 	<div class="mm-front__post">
 	{% assign post =  site.posts | first %}		
-			<h2>{{post.title}} - {{ post.date | date: "%b %-d, %Y" }}</h2>
 			<div class="mm-front__post-image">
 				<img src="{{site.baseurl}}{{post.previewImageUrl}}" width=400 alt="{{post.title}}">
+			</div>
+			<div class="mm-front__post-title-container">
+				<a class="mm-front__post-title" href="{{post.url}}">{{post.title}}</a>
+				<div class="mm-front__post-date">
+					{{ post.date | date: "%b %-d, %Y" }}
+				</div>
 			</div>
 	</div>		
 </div>
