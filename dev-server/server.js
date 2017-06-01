@@ -10,13 +10,13 @@ var clientCodePort = process.env.CLIENT_PORT;
 var jekyllPort = process.env.JEKYLL_PORT;
 
 var jekyllProxy = proxy(`http://localhost:${jekyllPort}`, {
-    intercept: (rsp, data, req, res, callback) => {
+    userResDecorator: (proxyResp, proxyRespData, userReq, userResp) => {
         //for index routes, webrick/jekyll server is returning 301 with trailing backslash
         //intercept these 301s and replace jekyll server port with client code port 
-        if (res.statusCode === 301 && res.getHeader('location').indexOf(`:${jekyllPort}/`)) {
-            res.setHeader('location', `http://localhost:${clientCodePort}${url.parse(rsp.headers.location).path}`);
+        if (userResp.statusCode === 301 && userResp.getHeader('location').indexOf(`:${jekyllPort}/`)) {
+            userResp.setHeader('location', `http://localhost:${clientCodePort}${url.parse(proxyResp.headers.location).path}`);
         }
-        callback(null, data);
+        return proxyRespData
     }
 });
 
