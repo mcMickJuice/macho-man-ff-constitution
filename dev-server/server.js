@@ -3,8 +3,8 @@ var webpackMiddleware = require('./webpack-middleware');
 var proxy = require('express-http-proxy');
 var url = require('url');
 
-var app = express();
-var app1 = express();
+var clientDevServer = express();
+var jekyllServer = express();
 
 var clientCodePort = process.env.CLIENT_PORT;
 var jekyllPort = process.env.JEKYLL_PORT;
@@ -20,10 +20,10 @@ var jekyllProxy = proxy(`http://localhost:${jekyllPort}`, {
     }
 });
 
-webpackMiddleware(app);
+webpackMiddleware(clientDevServer);
 
 //anything that passes through webpackMiddleware will arrive here
-app.all('/*', jekyllProxy)
+clientDevServer.all('/*', jekyllProxy)
 
-app.listen(clientCodePort, () => console.log(`app listening on port ${clientCodePort}`))
-app1.listen(jekyllPort, () => console.log(`jekyll port listending on ${jekyllPort}`))
+clientDevServer.listen(clientCodePort, () => console.log(`app listening on port ${clientCodePort}`))
+jekyllServer.listen(jekyllPort, () => console.log(`jekyll port listending on ${jekyllPort}`))

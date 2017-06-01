@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import { getResults } from '../service/dataService'
-import MatchupTile from './MatchupTile'
-import MatchupPopover from './MatchupPopover'
 import CurrentHolder from './CurrentHolder'
 import MatchupWithPopover from './MatchupWithPopover'
 import * as css from '../styles/championship-belt-path'

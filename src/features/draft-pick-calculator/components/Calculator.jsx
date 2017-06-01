@@ -68,7 +68,7 @@ class Calculator extends Component {
                 {result}
             </div>
         );
-    };
+    }
 }
 
 export default Calculator;

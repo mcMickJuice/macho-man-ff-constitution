@@ -1,4 +1,4 @@
-import React, { propTypes, Component } from 'react'
+import React, {Component } from 'react'
 import { getCurrentHolder } from '../service/dataService'
 import * as less from '../styles/current-holder'
 

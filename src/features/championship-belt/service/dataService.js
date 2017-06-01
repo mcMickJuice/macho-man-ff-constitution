@@ -1,7 +1,7 @@
-const championshipWeeks = [
-    { week: 7, title: 'Intercontinental Championship', imageUrl: '' },
-    { week: 13, title: 'WCW World Champion', imageUrl: '' }
-]
+// const championshipWeeks = [
+//     { week: 7, title: 'Intercontinental Championship', imageUrl: '' },
+//     { week: 13, title: 'WCW World Champion', imageUrl: '' }
+// ]
 
 const teams = {
     1: {
@@ -206,7 +206,7 @@ const results = [
             isWinner: true
         }
     },
-        {
+    {
         week: 13,
         holder: {
             teamId: 10,
@@ -218,7 +218,7 @@ const results = [
 ]
 
 export const getResults = () => {
-    var promise = new Promise((resolve, reject) => {
+    var promise = new Promise((resolve) => {
         var join = results.reduce((acc, next) => {
             let holder = clone(teams[next.holder.teamId], next.holder);
             let challenger = clone(teams[next.challenger.teamId], next.challenger);
@@ -266,7 +266,7 @@ export const getCurrentHolder = () => {
 
             return {
                 ...currentHolder,
-        streak: currentStreak.streak
+                streak: currentStreak.streak
             }
         })
 }

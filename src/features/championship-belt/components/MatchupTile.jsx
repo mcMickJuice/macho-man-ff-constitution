@@ -1,4 +1,5 @@
-import React, {PropTypes, Component} from 'react';
+import React from 'react'
+import PropTypes from 'prop-types'
 import WinnerTile from './WinnerTile'
 import {teamShape} from './shapes'
 
