@@ -9,8 +9,11 @@
     "client-watch": "set CLIENT_PORT=4001&&set JEKYLL_PORT=5000&&node dev-server/server",
     "test": "SET BABEL_ENV=test&&babel-tape-runner spec/**/*.spec.js",
     "npm-check": "npm-check -u",
-    "lint": "eslint src/**/*.{jsx,js}"
+    "lint": "eslint **/*.{jsx,js}"
   },
+  "pre-cmmmit": [
+    "lint"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mcMickJuice/macho-man-ff-constitution.git"
@@ -45,6 +48,7 @@
     "less": "^2.7.2",
     "less-loader": "^4.0.4",
     "npm-check": "^5.4.0",
+    "pre-commit": "^1.2.2",
     "style-loader": "^0.18.1",
     "tape": "^4.6.3",
     "webpack": "^2.2.0",
