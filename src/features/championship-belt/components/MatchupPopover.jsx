@@ -1,4 +1,4 @@
-import React, {PropTypes} from 'react'
+import React from 'react'
 import {teamShape} from './shapes'
 import MatchupTeam from './MatchupTeam'
 import * as css from '../styles/matchup-popover'

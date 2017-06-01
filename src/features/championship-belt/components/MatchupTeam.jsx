@@ -1,4 +1,4 @@
-import React, {PropTypes} from 'react';
+import React from 'react';
 import {teamShape} from './shapes'
 import css from '../styles/matchup-team.less'
 

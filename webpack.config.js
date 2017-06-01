@@ -3,14 +3,13 @@ var path = require('path');
 var CleanWebpackPlugin = require('clean-webpack-plugin')
 
 var featureDir = path.join(__dirname, 'src/features')
-var srcDir = path.join(__dirname, 'src')
 var distDir = path.join(__dirname, 'dist');
 
 module.exports = {
     entry:
     {
         calculator: path.join(featureDir, 'draft-pick-calculator/index.jsx'),
-        "championship-belt": path.join(featureDir, 'championship-belt/index.jsx')
+        'championship-belt': path.join(featureDir, 'championship-belt/index.jsx')
 
     },
     output: {
@@ -37,9 +36,9 @@ module.exports = {
                 test: /\.less$/,
                 include: path.join(__dirname, './src'),
                 use: [
-                    "style-loader",
-                    "css-loader",
-                    "less-loader"
+                    'style-loader',
+                    'css-loader',
+                    'less-loader'
                 ]
             }
         ]
