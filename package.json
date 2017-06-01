@@ -11,7 +11,7 @@
     "npm-check": "npm-check -u",
     "lint": "eslint **/*.{jsx,js}"
   },
-  "pre-cmmmit": [
+  "pre-commit": [
     "lint"
   ],
   "repository": {

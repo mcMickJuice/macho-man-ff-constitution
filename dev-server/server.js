@@ -25,5 +25,7 @@ webpackMiddleware(clientDevServer);
 //anything that passes through webpackMiddleware will arrive here
 clientDevServer.all('/*', jekyllProxy)
 
+/* eslint-disable no-console */
 clientDevServer.listen(clientCodePort, () => console.log(`Access local app at http://localhost:${clientCodePort}`))
 jekyllServer.listen(jekyllPort, () => console.log(`jekyll port listening at http://127.0.0.1:${jekyllPort}.`))
+/* eslint-enable no-console */
