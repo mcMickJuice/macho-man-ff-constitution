@@ -25,5 +25,5 @@ webpackMiddleware(clientDevServer);
 //anything that passes through webpackMiddleware will arrive here
 clientDevServer.all('/*', jekyllProxy)
 
-clientDevServer.listen(clientCodePort, () => console.log(`app listening on port ${clientCodePort}`))
-jekyllServer.listen(jekyllPort, () => console.log(`jekyll port listending on ${jekyllPort}`))
+clientDevServer.listen(clientCodePort, () => console.log(`Access local app at http://localhost:${clientCodePort}`))
+jekyllServer.listen(jekyllPort, () => console.log(`jekyll port listening at http://127.0.0.1:${jekyllPort}.`))

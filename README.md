@@ -6,8 +6,8 @@
 
 * install ruby globally
 * `gem install jekyll` to install jekyll globally
-* `npm run start-site` to run locally
-* I think you need to access site via 127.0.0.1/5000 ... i think. localhost:5000 does not work
+* `npm start` to run locally
+* Access the site locally via `localhost:4001`.  express proxies all requests that get past webpack middleware (really any asset requests) and sends to jekyll server at `127.0.0.1:5000`.  If you access `127.0.0.1:5000` locally, jekyll created content will work but generated assets managed by webpack will not work.
 
 # Deployment
 
