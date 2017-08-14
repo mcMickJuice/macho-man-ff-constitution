@@ -8,14 +8,14 @@ var distDir = path.join(__dirname, 'dist');
 module.exports = {
   entry:
   {
-    calculator: path.join(featureDir, 'draft-pick-calculator/index.jsx'),
-    'championship-belt': path.join(featureDir, 'championship-belt/index.jsx')
+    calculator: [path.join(featureDir, 'draft-pick-calculator/index.jsx')],
+    'championship-belt': [path.join(featureDir, 'championship-belt/index.jsx')]
 
   },
   output: {
     filename: '[name].js',
     path: distDir,
-    publicPath: distDir
+    publicPath: '/dist'
   },
   resolve: {
     extensions: ['.less', '.js', '.jsx']

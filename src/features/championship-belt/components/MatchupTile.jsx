@@ -11,9 +11,9 @@ const getWinner = (...teams) => {
 const Container = styled.div``;
 
 const Tile = styled.div`
-height: 100px,
-    width: 100px,
-    border: 1px solid black,
+    height: 100px;
+    width: 100px;
+    border: 1px solid black;
     margin-right: 2px
 `;
 
