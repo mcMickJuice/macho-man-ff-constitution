@@ -4,7 +4,6 @@ var proxy = require('express-http-proxy');
 var url = require('url');
 
 var clientDevServer = express();
-var jekyllServer = express();
 
 var clientCodePort = process.env.CLIENT_PORT;
 var jekyllPort = process.env.JEKYLL_PORT;
@@ -38,7 +37,4 @@ var clientServerInstance = clientDevServer.listen(clientCodePort, () => {
   clientServerInstance.keepAliveTimeout = 0;
   console.log(`Access local app at http://localhost:${clientCodePort}`);
 });
-jekyllServer.listen(jekyllPort, () =>
-  console.log(`jekyll port listening at http://127.0.0.1:${jekyllPort}.`)
-);
 /* eslint-enable no-console */
