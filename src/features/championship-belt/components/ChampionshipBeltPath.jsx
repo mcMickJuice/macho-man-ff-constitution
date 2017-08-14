@@ -1,76 +1,52 @@
 import React, { Component } from 'react';
-import { getResults } from '../service/dataService'
-import CurrentHolder from './CurrentHolder'
-import MatchupWithPopover from './MatchupWithPopover'
-import * as css from '../styles/championship-belt-path'
+import { getResults } from '../service/dataService';
+import CurrentHolder from './CurrentHolder';
+import MatchupTile from './MatchupTile';
 
 class ChampionshipBeltPath extends Component {
-    constructor() {
-        super();
+  constructor() {
+    super();
 
-        this.onMatchupSelect = this.onMatchupSelect.bind(this)
+    this.state = {
+      results: [],
+      isLoading: true
+    };
+  }
 
-        this.state = {
-            results: [],
-            selectedWeek: null,
-            isLoading: true
-        }
-    }
+  componentDidMount() {
+    getResults().then(results => {
+      this.setState({
+        results,
+        isLoading: false
+      });
+    });
+  }
 
-    componentDidMount() {
-        getResults()
-            .then(results => {
-                this.setState({
-                    results,
-                    isLoading: false
-                })
-            })
-    }
+  render() {
+    const { results, isLoading } = this.state;
 
-    onMatchupSelect(week) {
-        const {selectedWeek} = this.state;
-        const newWeek = selectedWeek === week
-            ? null
-            : week;
+    const resultsElements = results.map(r => {
+      return (
+        <MatchupTile
+          key={r.week}
+          week={r.week}
+          holder={r.holder}
+          challenger={r.challenger}
+        />
+      );
+    });
 
-        this.setState({
-            selectedWeek: newWeek
-        })
-    }
+    const elementBody = isLoading ? <div>Loading...</div> : resultsElements;
 
-    render() {
-        const {results, isLoading, selectedWeek} = this.state;
-
-        const resultsElements = results.map(r => {
-            return <MatchupWithPopover key={r.week}
-                showPopover={r.week === selectedWeek}
-                week={r.week}
-                holder={r.holder}
-                challenger={r.challenger}
-                onMatchupSelected={this.onMatchupSelect}
-                />
-        })
-
-        const elementBody = isLoading
-            ? <div>Loading...</div>
-            : resultsElements
-
-        return <div>
-            <div className="current-holder-container">
-                <CurrentHolder />
-            </div>
-            <div className="belt-path-container">
-                <h2>Belt Path <span className="tiny-callout">(click tile to see matchup details)</span></h2>
-
-                <div style={{ display: 'flex' }}>
-                    {elementBody}
-                </div>
-            </div>
-
+    return (
+      <div>
+        <CurrentHolder />
+        <div className="belt-path-container">
+          {elementBody}
         </div>
-    }
+      </div>
+    );
+  }
 }
-
-
 
 export default ChampionshipBeltPath;

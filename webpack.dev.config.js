@@ -1,10 +1,24 @@
-var baseWebpackConfig = require('./webpack.config');
+const webpackBaseConfig = require('./webpack.config');
+const merge = require('webpack-merge')
+const webpack = require('webpack')
 
-var config = {
-    devtool: 'source-map'
+var webpackDev = {
+  devtool: 'cheap-module-source-map',
+  output: {
+    publicPath: '/dist'
+  },
+  plugins: [
+    new webpack.HotModuleReplacementPlugin()
+  ]
 }
 
-baseWebpackConfig = Object.assign(baseWebpackConfig, config);
-baseWebpackConfig.output.publicPath = '/dist'
+const webpackConfig = merge(webpackDev, webpackBaseConfig)
 
-module.exports = baseWebpackConfig
+const middlewareClients = ['webpack/hot/dev-server', 'webpack-hot-middleware/client']
+Object.keys(webpackConfig.entry).forEach(key => {
+  const entryArr = webpackConfig.entry[key]
+
+  webpackConfig.entry[key] = [...middlewareClients,...entryArr]
+})
+
+module.exports = webpackConfig

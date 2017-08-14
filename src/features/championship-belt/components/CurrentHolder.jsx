@@ -1,48 +1,53 @@
-import React, {Component } from 'react'
-import { getCurrentHolder } from '../service/dataService'
-import * as less from '../styles/current-holder'
+import React, { Component } from 'react';
+import { getCurrentHolder } from '../service/dataService';
+import styled from 'styled-components';
+
+const TeamImage = styled.div`
+  & > img {
+    max-height: 300px;
+    display: block;
+  }
+`;
 
 class CurrentHolder extends Component {
-    constructor() {
-        super();
+  constructor() {
+    super();
 
-        this.state = {
-            holder: {},
-            isLoading: true
-        }
-    }
+    this.state = {
+      holder: {},
+      isLoading: true
+    };
+  }
 
-    componentDidMount() {
-        getCurrentHolder().then(holder => this.setState({
-            holder,
-            isLoading: false
-        }))
-    }
+  componentDidMount() {
+    getCurrentHolder().then(holder =>
+      this.setState({
+        holder,
+        isLoading: false
+      })
+    );
+  }
 
-    render() {
-        const {holder} = this.state;
+  render() {
+    const { holder } = this.state;
 
-
-
-        return <div className="mm-current-holder">
-            <div>
-                <h2>Current Belt Holder</h2>
-            </div>
-
-            <div className="mm-current-holder__team-name">
-                {holder.team}
-            </div>
-            <div className="mm-current-holder__streak">
-                Current Streak: {holder.streak}
-            </div>
-
-            <div className="mm-current-holder__team-image">
-                <img
-                    src={holder.imageUrl}
-                    alt={holder.team} />
-            </div>
+    return (
+      <div className="mm-current-holder">
+        <div>
+          <h2>Current Belt Holder</h2>
         </div>
-    }
+        <div>
+          {holder.team}
+        </div>
+        <div>
+          Current Streak: {holder.streak}
+        </div>
+        <TeamImage>
+          <img src={holder.imageUrl} alt={holder.team} />
+        </TeamImage>
+      </div>
+    );
+  }
 }
 
-export default CurrentHolder
+export default CurrentHolder;
