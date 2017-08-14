@@ -205,21 +205,15 @@ const results = [
       score: 85,
       isWinner: true
     }
-  },
-  {
-    week: 13,
-    holder: {
-      teamId: 10,
-    },
-    challenger: {
-      teamId: 8
-    }
   }
 ]
 
 export const getResults = () => {
   var promise = new Promise((resolve) => {
-    var join = results.reduce((acc, next) => {
+    var join = results
+    //sort by descending week
+    .sort((first, second) => second.week - first.week)
+    .reduce((acc, next) => {
       let holder = clone(teams[next.holder.teamId], next.holder);
       let challenger = clone(teams[next.challenger.teamId], next.challenger);
 

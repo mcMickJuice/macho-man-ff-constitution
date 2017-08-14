@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import WinnerTile from './WinnerTile';
 import { teamShape } from './shapes';
 import styled from 'styled-components';
 import MatchupResult from './MatchupResult';
@@ -12,11 +11,22 @@ const getWinner = (...teams) => {
 const Container = styled.div`
   border: 1px solid black;
   margin-bottom: 10px;
+  cursor: pointer;
+`;
+
+const Week = styled.div`
+  position: absolute;
+  color: white;
+  font-size: 24px;
+  background-color: rgba(0, 0, 0, 0.3);
 `;
 
 const Tile = styled.div`
-  width: 100px;
-  margin-right: 2px;
+  padding: 10px;
+  position: relative;
+  & img {
+    width: 100%;
+  }
 `;
 
 const TileDrawer = styled.div`background-color: lightgray;`;
@@ -28,7 +38,7 @@ class MatchupTile extends Component {
     this.toggleResult = this.toggleResult.bind(this);
 
     this.state = {
-      isOpened: true
+      isOpened: false
     };
   }
 
@@ -42,18 +52,16 @@ class MatchupTile extends Component {
 
   render() {
     const { isOpened } = this.state;
-    const { holder, challenger } = this.props;
-    const isDecided = holder.score != null || holder.score != null;
-
-    //if not decided...show blank tile for now
-    const bodyElement = isDecided
-      ? <WinnerTile team={getWinner(holder, challenger)} />
-      : <div>Undecided!</div>;
+    const { week, holder, challenger } = this.props;
+    const winner = getWinner(holder, challenger);
 
     return (
       <Container onClick={this.toggleResult}>
         <Tile>
-          {bodyElement}
+          <Week>
+            Week {week}
+          </Week>
+          <img src={winner.imageUrl} alt={winner.team} />
         </Tile>
         <TileDrawer isOpened={isOpened}>
           {isOpened &&
