@@ -1,7 +1,7 @@
 var baseWebpackConfig = require('./webpack.config');
 
 var config = {
-    devtool: 'source-map'
+  devtool: 'source-map'
 }
 
 baseWebpackConfig = Object.assign(baseWebpackConfig, config);

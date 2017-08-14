@@ -3,28 +3,28 @@ import { getCurrentHolder } from '../service/dataService'
 import * as less from '../styles/current-holder'
 
 class CurrentHolder extends Component {
-    constructor() {
-        super();
+  constructor() {
+    super();
 
-        this.state = {
-            holder: {},
-            isLoading: true
-        }
+    this.state = {
+      holder: {},
+      isLoading: true
     }
+  }
 
-    componentDidMount() {
-        getCurrentHolder().then(holder => this.setState({
-            holder,
-            isLoading: false
-        }))
-    }
+  componentDidMount() {
+    getCurrentHolder().then(holder => this.setState({
+      holder,
+      isLoading: false
+    }))
+  }
 
-    render() {
-        const {holder} = this.state;
+  render() {
+    const {holder} = this.state;
 
 
 
-        return <div className="mm-current-holder">
+    return <div className="mm-current-holder">
             <div>
                 <h2>Current Belt Holder</h2>
             </div>
@@ -42,7 +42,7 @@ class CurrentHolder extends Component {
                     alt={holder.team} />
             </div>
         </div>
-    }
+  }
 }
 
 export default CurrentHolder

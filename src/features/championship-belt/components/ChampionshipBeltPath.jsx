@@ -5,57 +5,57 @@ import MatchupWithPopover from './MatchupWithPopover'
 import * as css from '../styles/championship-belt-path'
 
 class ChampionshipBeltPath extends Component {
-    constructor() {
-        super();
+  constructor() {
+    super();
 
-        this.onMatchupSelect = this.onMatchupSelect.bind(this)
+    this.onMatchupSelect = this.onMatchupSelect.bind(this)
 
-        this.state = {
-            results: [],
-            selectedWeek: null,
-            isLoading: true
-        }
+    this.state = {
+      results: [],
+      selectedWeek: null,
+      isLoading: true
     }
+  }
 
-    componentDidMount() {
-        getResults()
+  componentDidMount() {
+    getResults()
             .then(results => {
-                this.setState({
-                    results,
-                    isLoading: false
-                })
+              this.setState({
+                results,
+                isLoading: false
+              })
             })
-    }
+  }
 
-    onMatchupSelect(week) {
-        const {selectedWeek} = this.state;
-        const newWeek = selectedWeek === week
+  onMatchupSelect(week) {
+    const {selectedWeek} = this.state;
+    const newWeek = selectedWeek === week
             ? null
             : week;
 
-        this.setState({
-            selectedWeek: newWeek
-        })
-    }
+    this.setState({
+      selectedWeek: newWeek
+    })
+  }
 
-    render() {
-        const {results, isLoading, selectedWeek} = this.state;
+  render() {
+    const {results, isLoading, selectedWeek} = this.state;
 
-        const resultsElements = results.map(r => {
-            return <MatchupWithPopover key={r.week}
+    const resultsElements = results.map(r => {
+      return <MatchupWithPopover key={r.week}
                 showPopover={r.week === selectedWeek}
                 week={r.week}
                 holder={r.holder}
                 challenger={r.challenger}
                 onMatchupSelected={this.onMatchupSelect}
                 />
-        })
+    })
 
-        const elementBody = isLoading
+    const elementBody = isLoading
             ? <div>Loading...</div>
             : resultsElements
 
-        return <div>
+    return <div>
             <div className="current-holder-container">
                 <CurrentHolder />
             </div>
@@ -68,7 +68,7 @@ class ChampionshipBeltPath extends Component {
             </div>
 
         </div>
-    }
+  }
 }
 
 

@@ -4,7 +4,7 @@ import MatchupTeam from './MatchupTeam'
 import * as css from '../styles/matchup-popover'
 
 const MatchupPopover = ({holder, challenger}) => {
-    return <div className="mm-popover" >
+  return <div className="mm-popover" >
         <div className="mm-popover__team">
             <MatchupTeam team={holder} />
         </div>
@@ -16,8 +16,8 @@ const MatchupPopover = ({holder, challenger}) => {
 }
 
 MatchupPopover.propTypes = {
-    holder: teamShape,
-    challenger: teamShape
+  holder: teamShape,
+  challenger: teamShape
 }
 
 export default MatchupPopover

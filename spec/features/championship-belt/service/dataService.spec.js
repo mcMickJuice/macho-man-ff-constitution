@@ -3,20 +3,20 @@ var dataService = require('../../../../src/features/championship-belt/service/da
 
 //TODO these are temporary specs...should be updated to actually be unit tests
 test('get results', (t) => {
-    t.plan(2)
+  t.plan(2)
     
-    dataService.getResults()
+  dataService.getResults()
         .then(r => {
-            t.ok(r.length === 13);
-            t.ok(r[r.length - 1].week === 13)
+          t.ok(r.length === 13);
+          t.ok(r[r.length - 1].week === 13)
         })
 })
 
 test('current holder', t => {
-    t.plan(1);
+  t.plan(1);
 
-    dataService.getCurrentHolder()
+  dataService.getCurrentHolder()
         .then(r => {
-            t.ok(r.teamId === 10)
+          t.ok(r.teamId === 10)
         })
 })
