@@ -1,15 +1,20 @@
 import React from 'react'
 import {teamShape} from 'react'
+import styled from 'styled-components'
 
-const style = {
-  maxHeight: '100px',
-  margin: 'auto'
-}
+const Container = styled.div`
+width: 150px;
+height: 150px;
+&>img {
+  width: 150px;
+  height: 100%;
+  display: block;
+}`
 
 const WinnerTile = ({team}) => {
-  return <div style={style} className="mm-tile">
-        <img className="mm-tile__winner-image" style={{maxHeight: '100px', display: 'block'}} src={team.imageUrl} alt={team.team}/>
-    </div>
+  return <Container>
+        <img src={team.imageUrl} alt={team.team}/>
+    </Container>
 }
 
 WinnerTile.propTypes = teamShape
