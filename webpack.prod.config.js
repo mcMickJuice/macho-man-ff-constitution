@@ -1,5 +1,6 @@
 var webpack = require('webpack');
 var baseWebpack = require('./webpack.config')
+var CleanWebpackPlugin = require('clean-webpack-plugin')
 
 var config = {
   plugins: [
@@ -8,7 +9,9 @@ var config = {
         'NODE_ENV': JSON.stringify('production')
       }
     }),
-    new webpack.optimize.UglifyJsPlugin({})
+    new webpack.optimize.UglifyJsPlugin({}),
+    new CleanWebpackPlugin(['dist']),
+
   ]
 }
 

@@ -1,6 +1,5 @@
 var webpack = require('webpack')
 var path = require('path');
-var CleanWebpackPlugin = require('clean-webpack-plugin')
 
 var featureDir = path.join(__dirname, 'src/features')
 var distDir = path.join(__dirname, 'dist');
@@ -44,7 +43,6 @@ module.exports = {
     ]
   },
   plugins: [
-    new CleanWebpackPlugin(['dist']),
     new webpack.optimize.CommonsChunkPlugin('common')
   ]
 }
