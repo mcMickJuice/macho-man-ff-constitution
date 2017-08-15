@@ -4,7 +4,7 @@ layout: default
 {% assign post = page %}
 {% if post.heroImageUrl != nil %}
 <div class="post-hero-image">
-    <img src="{{post.heroImageUrl}}" alt="{{post.title}}">
+    <img src="{{site.baseurl}}{{post.heroImageUrl}}" alt="{{post.title}}">
 </div>
 {% endif %}
 <div class="post-container">
