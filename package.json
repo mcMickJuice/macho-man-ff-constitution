@@ -9,7 +9,8 @@
     "client-watch": "set CLIENT_PORT=4001&&set JEKYLL_PORT=5000&&node dev-server/server",
     "test": "SET BABEL_ENV=test&&babel-tape-runner spec/**/*.spec.js",
     "npm-check": "npm-check -u",
-    "lint": "eslint **/*.{jsx,js}"
+    "lint": "eslint **/*.{jsx,js}",
+    "start:admin": "node admin/server.js"
   },
   "pre-commit": [
     "lint"

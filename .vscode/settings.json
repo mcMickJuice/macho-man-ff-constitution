@@ -10,5 +10,6 @@
         "**/.DS_Store": true,
         "**/_site": true
     },
-    "eslint.enable": true
+    "eslint.enable": true,
+    "prettier.singleQuote": true
 }
