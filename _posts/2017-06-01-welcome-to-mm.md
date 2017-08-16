@@ -2,8 +2,8 @@
 layout: post
 title: Welcome to the Macho Man Site!
 categories: football
-previewImageUrl: /assets/macho-man-flexing-post.png
-heroImageUrl: /assets/macho-man-flexing-post.png
+previewImageUrl: /assets/macho-man-heaven.jpg
+heroImageUrl: /assets/macho-man-heaven.jpg
 ---
 
 Hey! Welcome to the macho man site!
