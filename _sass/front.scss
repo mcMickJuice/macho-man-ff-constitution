@@ -1,22 +1,15 @@
 @import '_common';
-
 .mm-front {
-    &__post {
-
-    }
-
+    &__post {}
     &__post-title-container {
-
+        @extend .responsive-container
     }
-
     &__post-title {
         font-size: $large-font-size;
     }
-
     &__post-date {
         color: $grey-color-light;
     }
-
     &__post-image {
         img {
             width: 100%;

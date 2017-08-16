@@ -7,7 +7,7 @@ html {
 
 a {
     color: black;
-    font-weight: bold;
+    font-weight: 500;
 }
 
 h1 {
@@ -42,6 +42,10 @@ li {
     margin: 0 10px 10px 10px;
 }
 
+strong {
+    font-weight: 500;
+}
+
 //figure out way for all imgs within content body to be 100%
 // img {
 //     width: 100%;
@@ -50,6 +54,7 @@ li {
 .responsive-container {
     width: 95%;
     max-width: 1000px; // margin: 15px auto;
+    min-width: 380px;
     margin-top: 15px;
     margin-left: auto;
     margin-right: auto;
