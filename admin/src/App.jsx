@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import NumericInput from './NumericInput';
 import TeamSelect from './TeamSelect';
+import { getActiveTeams } from './services/data-client';
 
 const Container = styled.div`width: 90%;`;
 
@@ -11,17 +12,6 @@ const Panel = styled.div`
 `;
 
 const PanelContainer = styled.div`display: flex;`;
-
-const teams = [
-  {
-    id: 1,
-    team: 'Mikes team'
-  },
-  {
-    id: 2,
-    team: 'another team'
-  }
-];
 
 const Checkbox = styled.input.attrs({
   type: 'checkbox'
@@ -67,8 +57,17 @@ class App extends Component {
       challengerScore: 0,
       challengerTeam: null,
       winningTeam: null,
-      isHolderWinner: true
+      isHolderWinner: true,
+      teams: []
     };
+  }
+
+  componentDidMount() {
+    getActiveTeams().then(teams => {
+      this.setState({
+        teams
+      });
+    });
   }
 
   onWeekChange(week) {
@@ -84,7 +83,8 @@ class App extends Component {
   }
 
   onHolderTeamChange(teamId) {
-    const selectedTeam = teams.find(t => t.id == teamId);
+    const { teams } = this.state;
+    const selectedTeam = teams.find(t => t.teamId == teamId);
 
     this.setState({
       holderTeam: selectedTeam
@@ -98,7 +98,9 @@ class App extends Component {
   }
 
   onChallengerTeamChange(teamId) {
-    const selectedTeam = teams.find(t => t.id == teamId);
+    const { teams } = this.state;
+
+    const selectedTeam = teams.find(t => t.teamId == teamId);
 
     this.setState({
       challengerTeam: selectedTeam
@@ -127,7 +129,8 @@ class App extends Component {
       holderScore,
       challengerTeam,
       challengerScore,
-      isHolderWinner
+      isHolderWinner,
+      teams
     } = this.state;
 
     return (

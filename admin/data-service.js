@@ -9,7 +9,7 @@ module.exports.getActiveTeams = () => {
   return fileSystemService.getJsonFromFile(filePath).then(teamMap => {
     return Object.entries(teamMap).map(pair => {
       const [teamId, team] = pair;
-      return Object.assign({}, team, { teamId });
+      return Object.assign({}, team, { teamId: Number(teamId) });
     });
   });
 };

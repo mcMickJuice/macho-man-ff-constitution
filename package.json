@@ -10,7 +10,7 @@
     "test": "SET BABEL_ENV=test&&babel-tape-runner spec/**/*.spec.js",
     "npm-check": "npm-check -u",
     "lint": "eslint **/*.{jsx,js}",
-    "start:admin": "nodemon admin/server.js"
+    "start:admin": "nodemon admin/server.js --ignore src/"
   },
   "pre-commit": ["lint"],
   "repository": {
@@ -25,6 +25,7 @@
   },
   "homepage": "https://github.com/mcMickJuice/macho-man-ff-constitution#readme",
   "dependencies": {
+    "axios": "^0.16.2",
     "prop-types": "^15.5.10",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
