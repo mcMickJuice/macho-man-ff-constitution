@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import NumericInput from './NumericInput';
 import TeamSelect from './TeamSelect';
-import { getActiveTeams } from './services/data-client';
+import { getActiveTeams, createNewResult } from './services/data-client';
 
 const Container = styled.div`width: 90%;`;
 
@@ -48,6 +48,7 @@ class App extends Component {
     this.onChallengerTeamChange = this.onChallengerTeamChange.bind(this);
     this.onChallengerScoreUpdate = this.onChallengerScoreUpdate.bind(this);
     this.onWinnerToggle = this.onWinnerToggle.bind(this);
+    this.submitResult = this.submitResult.bind(this);
 
     this.state = {
       selectedWeek: 1,
@@ -56,7 +57,6 @@ class App extends Component {
       holderScore: 0,
       challengerScore: 0,
       challengerTeam: null,
-      winningTeam: null,
       isHolderWinner: true,
       teams: []
     };
@@ -121,6 +121,30 @@ class App extends Component {
     });
   }
 
+  submitResult() {
+    const {
+      selectedWeek,
+      selectedYear,
+      holderTeam,
+      holderScore,
+      challengerTeam,
+      challengerScore,
+      isHolderWinner
+    } = this.state;
+
+    const result = {
+      selectedWeek,
+      selectedYear,
+      holderTeam,
+      holderScore,
+      challengerTeam,
+      challengerScore,
+      isHolderWinner
+    };
+
+    createNewResult(result);
+  }
+
   render() {
     const {
       selectedWeek,
@@ -183,7 +207,9 @@ class App extends Component {
           <label>Is Holder the Winner?</label>
           <Checkbox onChange={this.onWinnerToggle} checked={isHolderWinner} />
         </div>
-        <button disabled={isInvalid(this.state)}>Submit</button>
+        <button onClick={this.submitResult} disabled={isInvalid(this.state)}>
+          Submit
+        </button>
         <pre>
           {JSON.stringify(this.state, null, 2)}
         </pre>
