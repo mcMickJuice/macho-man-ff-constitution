@@ -2,6 +2,7 @@ const express = require('express');
 const webpackConfig = require('./webpack.admin');
 const webpackMiddleware = require('../dev-server/webpack-middleware');
 const dataService = require('./data-service');
+const bodyParser = require('body-parser');
 
 const app = express();
 
@@ -9,9 +10,18 @@ webpackMiddleware(app, webpackConfig);
 
 app.use(express.static(__dirname));
 
+app.use(bodyParser.json());
+
 app.get('/api/teams', (req, res) => {
   dataService.getActiveTeams().then(teams => {
     res.send(teams);
+  });
+});
+
+//add new result
+app.post('/api/result', (req, res) => {
+  dataService.addResult(req.body).then(() => {
+    res.send('result added');
   });
 });
 
