@@ -2,7 +2,7 @@
   "name": "macho-man-ff-constitution",
   "version": "1.0.0",
   "scripts": {
-    "client-prod-build": "webpack --config webpack.prod.config.js",
+    "client-build": "webpack --config webpack.prod.config.js",
     "jekyll-build": "jekyll build",
     "jekyll-run": "jekyll serve --config _config.yml,_config.dev.yml --port 5000",
     "start": "concurrently --kill-others \"npm run client-watch\" \"npm run jekyll-run\"",
@@ -12,9 +12,7 @@
     "lint": "eslint **/*.{jsx,js}",
     "start:admin": "nodemon admin/server.js --ignore src/"
   },
-  "pre-commit": [
-    "lint"
-  ],
+  "pre-commit": ["lint"],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mcMickJuice/macho-man-ff-constitution.git"
