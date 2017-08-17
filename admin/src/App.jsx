@@ -27,6 +27,26 @@ const Checkbox = styled.input.attrs({
   type: 'checkbox'
 })``;
 
+const isInvalid = state => {
+  const {
+    selectedYear,
+    selectedWeek,
+    holderTeam,
+    holderScore,
+    challengerScore,
+    challengerTeam
+  } = state;
+  return (
+    selectedYear < 2015 ||
+    selectedYear > 2025 ||
+    (selectedWeek < 1 || selectedWeek > 17) ||
+    holderTeam == null ||
+    (holderScore < 0 || holderScore == null) ||
+    challengerTeam == null ||
+    (challengerScore < 0 || challengerScore == null)
+  );
+};
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -34,25 +54,32 @@ class App extends Component {
     this.onWeekChange = this.onWeekChange.bind(this);
     this.onYearChange = this.onYearChange.bind(this);
     this.onHolderTeamChange = this.onHolderTeamChange.bind(this);
+    this.onHolderScoreUpdate = this.onHolderScoreUpdate.bind(this);
+    this.onChallengerTeamChange = this.onChallengerTeamChange.bind(this);
+    this.onChallengerScoreUpdate = this.onChallengerScoreUpdate.bind(this);
+    this.onWinnerToggle = this.onWinnerToggle.bind(this);
 
     this.state = {
       selectedWeek: 1,
       selectedYear: 2017,
       holderTeam: null,
+      holderScore: 0,
+      challengerScore: 0,
       challengerTeam: null,
-      winningTeam: null
+      winningTeam: null,
+      isHolderWinner: true
     };
   }
 
-  onWeekChange(evt) {
+  onWeekChange(week) {
     this.setState({
-      selectedWeek: Number(evt.target.value)
+      selectedWeek: week
     });
   }
 
-  onYearChange(evt) {
+  onYearChange(year) {
     this.setState({
-      selectedYear: Number(evt.target.value)
+      selectedYear: year
     });
   }
 
@@ -64,18 +91,61 @@ class App extends Component {
     });
   }
 
+  onHolderScoreUpdate(score) {
+    this.setState({
+      holderScore: score
+    });
+  }
+
+  onChallengerTeamChange(teamId) {
+    const selectedTeam = teams.find(t => t.id == teamId);
+
+    this.setState({
+      challengerTeam: selectedTeam
+    });
+  }
+
+  onChallengerScoreUpdate(score) {
+    this.setState({
+      challengerScore: score
+    });
+  }
+
+  onWinnerToggle() {
+    this.setState(state => {
+      return {
+        isHolderWinner: !state.isHolderWinner
+      };
+    });
+  }
+
   render() {
     const {
       selectedWeek,
       selectedYear,
-      holderTeam
-      // challengerTeam
+      holderTeam,
+      holderScore,
+      challengerTeam,
+      challengerScore,
+      isHolderWinner
     } = this.state;
 
     return (
       <Container>
-        <NumericInput value={selectedWeek} onChange={this.onWeekChange} />
-        <NumericInput value={selectedYear} onChange={this.onYearChange} />
+        <NumericInput
+          value={selectedWeek}
+          label="Week"
+          min={1}
+          max={17}
+          onChange={this.onWeekChange}
+        />
+        <NumericInput
+          value={selectedYear}
+          min={2015}
+          max={2025}
+          label="Season"
+          onChange={this.onYearChange}
+        />
         <PanelContainer>
           <Panel>
             <h3>Holder</h3>
@@ -84,12 +154,36 @@ class App extends Component {
               selectedTeam={holderTeam}
               teams={teams}
             />
-            <Checkbox disabled={holderTeam == null} />
+            <NumericInput
+              label="Score"
+              min={0}
+              value={holderScore}
+              onChange={this.onHolderScoreUpdate}
+            />
           </Panel>
           <Panel>
             <h3>Challenger</h3>
+            <TeamSelect
+              onTeamSelect={this.onChallengerTeamChange}
+              selectedTeam={challengerTeam}
+              teams={teams}
+            />
+            <NumericInput
+              min={0}
+              label="Score"
+              value={challengerScore}
+              onChange={this.onChallengerScoreUpdate}
+            />
           </Panel>
         </PanelContainer>
+        <div>
+          <label>Is Holder the Winner?</label>
+          <Checkbox onChange={this.onWinnerToggle} checked={isHolderWinner} />
+        </div>
+        <button disabled={isInvalid(this.state)}>Submit</button>
+        <pre>
+          {JSON.stringify(this.state, null, 2)}
+        </pre>
       </Container>
     );
   }
