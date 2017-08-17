@@ -1,6 +1,7 @@
 [
   {
     "week": 1,
+    "year": 2016,
     "holder": {
       "isWinner": false,
       "teamId": 1,
@@ -14,6 +15,7 @@
   },
   {
     "week": 2,
+    "year": 2016,
     "holder": {
       "isWinner": false,
       "teamId": 3,
@@ -27,6 +29,7 @@
   },
   {
     "week": 3,
+    "year": 2016,
     "holder": {
       "isWinner": true,
       "teamId": 2,
@@ -40,6 +43,7 @@
   },
   {
     "week": 4,
+    "year": 2016,
     "holder": {
       "teamId": 2,
       "isWinner": true,
@@ -53,6 +57,7 @@
   },
   {
     "week": 5,
+    "year": 2016,
     "holder": {
       "teamId": 2,
       "isWinner": false,
@@ -66,6 +71,7 @@
   },
   {
     "week": 6,
+    "year": 2016,
     "holder": {
       "teamId": 7,
       "isWinner": true,
@@ -79,6 +85,7 @@
   },
   {
     "week": 7,
+    "year": 2016,
     "holder": {
       "teamId": 7,
       "isWinner": true,
@@ -91,6 +98,7 @@
   },
   {
     "week": 8,
+    "year": 2016,
     "holder": {
       "teamId": 7,
       "score": 89
@@ -103,6 +111,7 @@
   },
   {
     "week": 9,
+    "year": 2016,
     "holder": {
       "teamId": 11,
       "score": 130,
@@ -115,6 +124,7 @@
   },
   {
     "week": 10,
+    "year": 2016,
     "holder": {
       "teamId": 11,
       "score": 112
@@ -127,6 +137,7 @@
   },
   {
     "week": 11,
+    "year": 2016,
     "holder": {
       "teamId": 8,
       "score": 96
@@ -139,6 +150,7 @@
   },
   {
     "week": 12,
+    "year": 2016,
     "holder": {
       "teamId": 9,
       "score": 83
