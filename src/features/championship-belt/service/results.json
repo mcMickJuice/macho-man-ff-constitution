@@ -1,0 +1,152 @@
+[
+  {
+    "week": 1,
+    "holder": {
+      "isWinner": false,
+      "teamId": 1,
+      "score": 132
+    },
+    "challenger": {
+      "isWinner": true,
+      "teamId": 3,
+      "score": 145
+    }
+  },
+  {
+    "week": 2,
+    "holder": {
+      "isWinner": false,
+      "teamId": 3,
+      "score": 94
+    },
+    "challenger": {
+      "isWinner": true,
+      "teamId": 2,
+      "score": 126
+    }
+  },
+  {
+    "week": 3,
+    "holder": {
+      "isWinner": true,
+      "teamId": 2,
+      "score": 129
+    },
+    "challenger": {
+      "isWinner": false,
+      "teamId": 1,
+      "score": 121
+    }
+  },
+  {
+    "week": 4,
+    "holder": {
+      "teamId": 2,
+      "isWinner": true,
+      "score": 104
+    },
+    "challenger": {
+      "teamId": 8,
+      "isWinner": false,
+      "score": 91
+    }
+  },
+  {
+    "week": 5,
+    "holder": {
+      "teamId": 2,
+      "isWinner": false,
+      "score": 115
+    },
+    "challenger": {
+      "teamId": 7,
+      "isWinner": true,
+      "score": 183
+    }
+  },
+  {
+    "week": 6,
+    "holder": {
+      "teamId": 7,
+      "isWinner": true,
+      "score": 132
+    },
+    "challenger": {
+      "teamId": 6,
+      "isWinner": false,
+      "score": 80
+    }
+  },
+  {
+    "week": 7,
+    "holder": {
+      "teamId": 7,
+      "isWinner": true,
+      "score": 123
+    },
+    "challenger": {
+      "teamId": 12,
+      "score": 116
+    }
+  },
+  {
+    "week": 8,
+    "holder": {
+      "teamId": 7,
+      "score": 89
+    },
+    "challenger": {
+      "teamId": 11,
+      "score": 140,
+      "isWinner": true
+    }
+  },
+  {
+    "week": 9,
+    "holder": {
+      "teamId": 11,
+      "score": 130,
+      "isWinner": true
+    },
+    "challenger": {
+      "teamId": 10,
+      "score": 118
+    }
+  },
+  {
+    "week": 10,
+    "holder": {
+      "teamId": 11,
+      "score": 112
+    },
+    "challenger": {
+      "teamId": 8,
+      "score": 149,
+      "isWinner": true
+    }
+  },
+  {
+    "week": 11,
+    "holder": {
+      "teamId": 8,
+      "score": 96
+    },
+    "challenger": {
+      "teamId": 9,
+      "score": 106,
+      "isWinner": true
+    }
+  },
+  {
+    "week": 12,
+    "holder": {
+      "teamId": 9,
+      "score": 83
+    },
+    "challenger": {
+      "teamId": 10,
+      "score": 85,
+      "isWinner": true
+    }
+  }
+]

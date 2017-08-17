@@ -11,5 +11,6 @@
         "**/_site": true
     },
     "eslint.enable": true,
-    "prettier.singleQuote": true
+    "prettier.singleQuote": true,
+    "editor.formatOnSave": true
 }
