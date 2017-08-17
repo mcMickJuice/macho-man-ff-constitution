@@ -2,6 +2,7 @@ var express = require('express');
 var webpackMiddleware = require('./webpack-middleware');
 var proxy = require('express-http-proxy');
 var url = require('url');
+var webpackConfig = require('../webpack.dev.config')
 
 var clientDevServer = express();
 
@@ -27,7 +28,7 @@ var jekyllProxy = proxy(`http://localhost:${jekyllPort}`, {
   }
 });
 
-webpackMiddleware(clientDevServer);
+webpackMiddleware(clientDevServer, webpackConfig);
 
 //anything that passes through webpackMiddleware will arrive here
 clientDevServer.all('/*', jekyllProxy);

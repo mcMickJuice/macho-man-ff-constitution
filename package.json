@@ -9,7 +9,8 @@
     "client-watch": "set CLIENT_PORT=4001&&set JEKYLL_PORT=5000&&node dev-server/server",
     "test": "SET BABEL_ENV=test&&babel-tape-runner spec/**/*.spec.js",
     "npm-check": "npm-check -u",
-    "lint": "eslint **/*.{jsx,js}"
+    "lint": "eslint **/*.{jsx,js}",
+    "start:admin": "nodemon admin/server.js --ignore src/"
   },
   "pre-commit": [
     "lint"
@@ -26,6 +27,7 @@
   },
   "homepage": "https://github.com/mcMickJuice/macho-man-ff-constitution#readme",
   "dependencies": {
+    "axios": "^0.16.2",
     "prop-types": "^15.5.10",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
@@ -38,7 +40,7 @@
     "babel-preset-es2015": "^6.22.0",
     "babel-preset-react": "^6.22.0",
     "babel-tape-runner": "^2.0.1",
-    "body-parser": "^1.16.0",
+    "body-parser": "^1.17.2",
     "clean-webpack-plugin": "^0.1.15",
     "concurrently": "^3.1.0",
     "css-loader": "^0.28.4",
@@ -48,6 +50,7 @@
     "express-http-proxy": "^1.0.3",
     "less": "^2.7.2",
     "less-loader": "^4.0.4",
+    "nodemon": "^1.11.0",
     "npm-check": "^5.4.0",
     "pre-commit": "^1.2.2",
     "style-loader": "^0.18.1",
