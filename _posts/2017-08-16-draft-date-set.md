@@ -32,7 +32,7 @@ The draft order is the inverse order of last year's standings, with the champion
 11. Shirtless Vince McMahon
 12. Shirtless Angela Merkel
 
-Remember that we have some rules around which players you can keep and what round you lose based on your keeper selection.  To review these rules, <a href="/{{site.baseUrl}}league/keeper">click here</a>.
+Remember that we have some rules around which players you can keep and what round you lose based on your keeper selection.  To review these rules, <a href="/{{site.baseurl}}league/keeper">click here</a>.
 
 As always, please arrive about 15 minutes early so that we can iron out any technical difficulties and have everyone ready to go when the clock strikes 8.
 
